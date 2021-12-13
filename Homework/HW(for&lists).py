@@ -53,6 +53,10 @@ else:
     print("function is not good")
 # a little hint, you need to keep track of the index on which you are on
 
+#without built in func
+
+
+
 #
 # # ex 5
 # #create a function which returns the number of elements in a list
