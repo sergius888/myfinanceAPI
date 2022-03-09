@@ -16,25 +16,17 @@ print("The sum of your numbers is", sum)
 # take 3 numbers from the user
 # print the biggest one
 
-num1 = input("first number ")
-num2 = input("second number ")
-num3 = input("third number ")
-# print(max(num1, num2, num3))
-list = [num1, num2, num3]
-def biggest(data):
-    max_value = data[0]
-    for x in data:
-        if max_value < x:
-            max_value = x
-    return max_value
-print("The biggest number is", biggest(list))
 
+
+numbers = input("type two numbers separated by space")
+lista = numbers.split(" ")
+biggest = max(lista)
 
 
 # ex3
 # ask the user's name
 # ask him his age
-print if he is allowed to drink
+# print if he is allowed to drink
 
 name = str(input("What is your name? "))
 age = int(input("How old are you? "))
@@ -61,7 +53,7 @@ import random
 x = random.randint(0, 9) #this will pick a random number between 0 and 9
 #create a guessing game, the user must tell a number between 0 and 9 and you must tell him if he guessed it
 guess = int(input("Guess a number between 0 and 9"))
-if guess == x:
+if guess == x:g
     print("You guessed the number")
 else:
     print("You did not guess the number. The correct number was", x)
