@@ -1,6 +1,6 @@
 import json
 
-from stock.persistance_interface import StockPersistanceInterface
+from courses.project_1.my_finance.stock.persistance_interface import StockPersistanceInterface
 
 
 class StockFilePersistance(StockPersistanceInterface):
@@ -8,7 +8,9 @@ class StockFilePersistance(StockPersistanceInterface):
         self.path = path
 
     def get_all(self) -> list[dict]:
+        print('get all')
         file = open(self.path)
+        print('file opened')
         json_items = file.read()
         file.close()
         items = json.loads(json_items)

@@ -6,6 +6,7 @@ class Configuration:
         file = open("configuration/config.json")
         contents = file.read()
         file.close()
+        print(contents)
         self.conf = json.loads(contents)
 
     def get_number_of_items_per_page(self) -> int:

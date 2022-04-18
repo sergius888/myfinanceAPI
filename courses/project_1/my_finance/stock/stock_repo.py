@@ -1,6 +1,5 @@
-from stock.stock import Stock
-from exceptions import StockNotFound
-
+from courses.project_1.my_finance.stock.stock import Stock
+from courses.project_1.my_finance.exceptions import StockNotFound
 
 class StockRepository:
     stocks = {}

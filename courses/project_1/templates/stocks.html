@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyFinancePal</title>
+</head>
+<body>
+    <h1>Welcome to your finance app. Here are the stocks you have:</h1>
+    {% for x in stocks %}
+        <p>Ticker: {{ x.ticker }}, Company: {{ x.company }}</p>
+    {% endfor %}
+</body>
+</html>

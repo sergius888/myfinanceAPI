@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Finance app</title>
+</head>
+<body>
+    <h1>Here u can find details about {{stock_id}}</h1>
+    {% if value > 800 %}
+        <p>This is an expensive stock!</p>
+    {% else %}
+        <p>This is not a big stock</p>
+    {%endif%}
+</body>
+</html>

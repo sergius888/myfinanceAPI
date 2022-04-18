@@ -9,17 +9,20 @@
 # --port <port_number> -> select on which port to start
 
 
+import yfinance
+import logging
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi_utils.tasks import repeat_every
 
-from stock.stock_repo import StockRepository
-from configuration.config import Configuration
-from database.stock_file_persistance import StockFilePersistance
-from database.stock_sql_persistance import StockSqlPersistance
-from exceptions import StockNotFound
-from api.stocks import stocks_router
-from api.health import health_router
+from courses.project_1.my_finance.stock.stock_repo import StockRepository
+from courses.project_1.my_finance.configuration.config import Configuration
+from courses.project_1.my_finance.database.stock_file_persistance import StockFilePersistance
+from courses.project_1.my_finance.database.stock_sql_persistance import StockSqlPersistance
+from courses.project_1.my_finance.exceptions import StockNotFound
+from courses.project_1.my_finance.api.stocks import stocks_router
+from courses.project_1.my_finance.api.health import health_router
+from courses.project_1.my_finance.api.diagrams import diagrams_router
 
 app = FastAPI(
     title="Name of our app",  # TODO for homework, name your application
@@ -29,6 +32,7 @@ app = FastAPI(
 )
 app.include_router(stocks_router)
 app.include_router(health_router)
+app.include_router(diagrams_router)
 
 conf = Configuration()
 if conf.get_db_type() == "file":
@@ -38,10 +42,9 @@ if conf.get_db_type() == "sql":
 StockRepository.persistance = persistance
 stock_repo = StockRepository()
 
-
-import logging
 logging.basicConfig(filename="finance.log", encoding="utf-8", level=logging.DEBUG)
 logging.info("Starting the finance app ...")
+
 
 # TODO create a get for a single stock, we give the ticker and receive more information
 # additional information: long summary, on which exchange it is, country, number of employees, industry
@@ -51,12 +54,11 @@ logging.info("Starting the finance app ...")
 def load_list_of_items():
     logging.info("Loading stocks from database ...")
     stock_repo.load()
-    logging.info("Successfully loaded stocks from database ...")
+    logging.info("Successfully loaded stocks from database.")
 
-import yfinance
 
 @app.on_event("startup")
-@repeat_every(seconds=5 * 60, wait_first=True)
+@repeat_every(seconds=5 * 60, wait_first=True)  # every 5 seconds we run this function
 def update_prices():
     # get all stocks
     # get price (yfinance)
@@ -64,7 +66,6 @@ def update_prices():
     if not stock_repo.stocks:
         logging.warning("Stocks not loaded yet!")
         return
-    # print("ssss ------ sssss")
     tickers = stock_repo.stocks.keys()
     logging.info("Updating prices ...")
     for a_ticker in tickers:
