@@ -11,7 +11,7 @@ stocks_repo = StockRepository()
 
 @stocks_router.post("")
 def add_new_stock(stock_info: StockModel):
-    new_stock = StockFactory.make_from_model(stock_info)
+    new_stock = StockFactory().make_from_model(stock_info)
     stocks_repo.add(new_stock)
 
 

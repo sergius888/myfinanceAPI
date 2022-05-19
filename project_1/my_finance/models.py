@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 # TODO create model for adding a stockk & a model for getting a stockk
 # if another domain in your project, create different models for POST & GET
 class StockModel(BaseModel):
-    ticker: str = Field(description="The ticker ID of the stockk, for example Tesla has TSLA")
+    ticker: str = Field(description="The ticker ID of the stock, for example Tesla has TSLA")
     company: str = Field(default="", description="The full company name, leave empty for POST")
     field: str = Field(default="")
     price: float = Field(default=-1, description="Current price updated in real time")
