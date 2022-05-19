@@ -1,36 +1,33 @@
 import unittest
 
 
-def check_password(password: str):
-    if password is None:
-        raise Exception("You need to type a password!")
-    if type(password) == bool:
-        raise Exception("The password must be string!")
-    return "strength: low"
+def sum(x, y):
+    return x + y
 
 
-class TestCheckPassword(unittest.TestCase):
-    def test_there_if_password_none_raise_exception(self):
-        # setup
-        password = None
-        with self.assertRaises(Exception) as context:  # assertion
-            check_password(password)  # execution
+class MyTestCase(unittest.TestCase):
+    def test_something(self):
+        self.assertEqual(True, True)  # add assertion here
 
-        self.assertEqual("You need to type a password!", str(context.exception))  # assertion
+    def test_sums(self):
+        self.assertEqual(5, 2 + 3)
+        self.assertNotEqual(7, 8)
+        self.assertFalse(5 > 9)
 
-    def test_password_is_string(self):
-        # setup
-        password = True
+    def test_function_sum(self):
+        # set up of fixture
+        x = -10
+        y = 9
         # execution
-        with self.assertRaises(Exception):
-            check_password(password)
+        s = sum(x, y)
         # assertion
-        # self.assertEqual("The password must be string!", output)
+        self.assertEqual(-1, s)
+        # cleanup
 
-    def test_password_is_below_8_chars(self):
-        # setup
-        password = "short"
-        # execution
-        output = check_password(password)
-        # assertion
-        self.assertEqual("strength: low", output)
+
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()

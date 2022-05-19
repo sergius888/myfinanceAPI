@@ -34,5 +34,3 @@ class TestCheckPassword(unittest.TestCase):
         output = check_password(password)
         # assertion
         self.assertEqual("strength: low", output)
-
-

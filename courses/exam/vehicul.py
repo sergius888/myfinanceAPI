@@ -1,8 +1,13 @@
+# clasa Vehicul care are următoarele atribute:
+# număr roţi (int), număr uşi (int), număr locuri (int);
+# capacitate rezervor (int) /portbagaj (int) u.m. : litru;
+# dimensiuni: lungime (int) / lăţime(int); înălţime(int)  u.m.:  mm;
+# consum: urban/extraurban/mixt (int) u.m.:litri/100km
 
 class Vehicul:
     def __init__(self, nr_roti: int, nr_usi: int, nr_locuri: int, capacitate_rezervor: int,
-                 capacitate_portbagaj: int, lungime: int, latime: int, inaltime:int, consum_urban: int,
-                 consum_extraurban: int, consum_mixt: int):
+                 capacitate_portbagaj: int, lungime: int, latime: int, inaltime: int,
+                 consum_urban: int, consum_extraurban: int, consum_mixt: int):
         self.set_nr_roti(nr_roti)
         self.__nr_usi = nr_usi
         self.__nr_locuri = nr_locuri
@@ -32,6 +37,4 @@ class Vehicul:
 
     def set_consum_urban(self, value: int):
         self.__consum_urban = value
-
-
 

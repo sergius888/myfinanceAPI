@@ -3,13 +3,12 @@ import openpyxl
 book = openpyxl.Workbook()
 sheet = book.active
 
-sheet['A1'] = "hello"
-sheet['B1'] = "world"
+sheet["A1"] = "hello"
+sheet["B1"] = "world!"
+sheet["A2"] = "world"
+sheet["B2"] = "hello"
 
-sheet["A2"] = "wolf"
-sheet["B2"] = "aloha"
-
-sheet.title = "Titlul nou"
+sheet.title = "Titlu nou"
 
 # book.save("my.xls")
 

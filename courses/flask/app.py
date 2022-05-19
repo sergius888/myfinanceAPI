@@ -20,5 +20,5 @@ def stocks():
 
 @app.route("/stocks/<stock_id>")
 def one_stock(stock_id: str):
-    # we query the stock from database
+    # we query the stockk from database
     return render_template("one_stock.html", stock_id=stock_id, value=1000)

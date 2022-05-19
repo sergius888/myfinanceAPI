@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Our Finance app</title>
+    <title>Our finance app</title>
 </head>
 <body>
-    <h1>Here u can find details about {{stock_id}}</h1>
+    <h1>Here you can find details about {{ stock_id }}</h1>
     {% if value > 800 %}
-        <p>This is an expensive stock!</p>
+        <p>This is a big stock!</p>
     {% else %}
-        <p>This is not a big stock</p>
+        <p>This is not a big stock!</p>
     {%endif%}
 </body>
 </html>
