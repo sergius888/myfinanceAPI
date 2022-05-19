@@ -1,0 +1,16 @@
+add API option to create red/green candle sticks graphs
+how to create candlesticks?
+diagram = graph_objects.Figure([graph_objects.Candlestick(
+    x=dataframe.index,
+    open=dataframe["Open"],
+    high=dataframe["High"],
+    low=dataframe["Low"],
+    close=dataframe["Close"],
+)])
+diagram.show()
+
+# change naming schema of graphs to be diagram_<year>_<month>_<day>_<hour>_<minute>_<seconds>
+
+# create a GET method to see the list of the saved file graphs
+
+# add option to delete or select a saved file graph based on its name

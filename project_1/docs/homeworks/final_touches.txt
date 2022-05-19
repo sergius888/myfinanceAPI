@@ -1,0 +1,20 @@
+Pentru nota 7 (1p)
+    1 Give a name to the app, in index.py
+    2 Bump version to 1.0.0, index.py
+    3 update requirements.txt to have all the packages there
+    4 write in README the steps to get the project ( git clone, create venv, install packages, start the server )
+    5 add a description to the app, in index.py
+    6 format all files with black
+
+Pentru nota 8 (1p)
+    1 handle exceptions if the user tries to add a stock which already exists
+    2 the exception should be handled also in api, we should present a nice error message to the user
+    3 same for delete (what happens if the file/database raises an exception)
+
+Pentru nota 9 (1p)
+    1 create an API put method for stocks, we can edit the ammount we have (api + repo method + database/file)
+    2 return the ammount when querying stocks & the total value
+
+Pentru nota 10 (1p)
+    1 unit testing
+    2 logging

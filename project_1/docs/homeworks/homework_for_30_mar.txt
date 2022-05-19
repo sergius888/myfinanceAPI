@@ -1,0 +1,8 @@
+1. Let's start the app from the folder project_1, uvicorn my_finance.index:app ...
+   This means we need to change the imports, need to add `my_finance.` before the file in our own project
+2. Stock Repo add should raise a custom exception if it cannot add a stock (CannotAddStock)
+   The exception should be handled by fastapi, return a nice error message to the user
+   Update the test to check for the custom exception
+3. The persistance implementations should raise exceptions if it cannot add them + make test for this
+4. Make test for stock repo get
+5. Make test for stock repo delete

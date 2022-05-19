@@ -1,0 +1,402 @@
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [74096]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/PLTR?range=3y&interval=1d&includePrePost=False&events=div%2Csplits HTTP/1.1" 200 None
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/Users/zenmonkey/PycharmProjects/python-course2/project_1/./my_finance/api/stocks.py", line 14, in add_new_stock
+    new_stock = StockFactory.make_from_model(stock_info)
+TypeError: StockFactory.make_from_model() missing 1 required positional argument: 'model'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/Users/zenmonkey/PycharmProjects/python-course2/project_1/./my_finance/api/stocks.py", line 14, in add_new_stock
+    new_stock = StockFactory.make_from_model(stock_info)
+TypeError: StockFactory.make_from_model() missing 1 required positional argument: 'model'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [74096]
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [74218]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/Users/zenmonkey/PycharmProjects/python-course2/project_1/./my_finance/api/stocks.py", line 14, in add_new_stock
+    new_stock = StockFactory.make_from_model(stock_info)
+TypeError: StockFactory.make_from_model() missing 1 required positional argument: 'model'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [74218]
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [74248]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/PLTR?range=3y&interval=1d&includePrePost=False&events=div%2Csplits HTTP/1.1" 200 None
+INFO:root:Updating prices ...
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/key-statistics?p=PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/key-statistics?p=AMZN HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/key-statistics?p=MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/key-statistics?p=GOOG HTTP/1.1" 200 None
+INFO:root:Updating prices ...
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/key-statistics?p=PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/key-statistics?p=AMZN HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/key-statistics?p=MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/key-statistics?p=GOOG HTTP/1.1" 200 None
+INFO:root:Updating prices ...
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/PATH/key-statistics?p=PATH HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/AMZN/key-statistics?p=AMZN HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/MSFT/key-statistics?p=MSFT HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/holders HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/financials HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/analysis HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /quote/GOOG/key-statistics?p=GOOG HTTP/1.1" 200 None
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/Users/zenmonkey/PycharmProjects/python-course2/project_1/./my_finance/api/stocks.py", line 14, in add_new_stock
+    new_stock = StockFactory.make_from_model(stock_info)
+TypeError: StockFactory.make_from_model() missing 1 required positional argument: 'model'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [74248]
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [74425]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    raw_response = await run_endpoint_function(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/Users/zenmonkey/PycharmProjects/python-course2/project_1/./my_finance/api/stocks.py", line 14, in add_new_stock
+    new_stock = StockFactory.make_from_model(stock_info)
+TypeError: StockFactory.make_from_model() missing 1 required positional argument: 'model'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [74425]
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [74441]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [74441]
+INFO:root:Starting the finance app ...
+INFO:uvicorn.error:Started server process [74517]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:root:Loading stocks from database ...
+INFO:root:Successfully loaded stocks from database.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [74517]

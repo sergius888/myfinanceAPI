@@ -1,0 +1,4 @@
+1. Add info about country & number of employees
+( create a migration script for the db, factory should add this new fields)
+2. GET /stocks can filter based on country & number of employees too
+3. GET /stocks can receive number_of_items_per_page, if it does not receive it will use the value from our config file

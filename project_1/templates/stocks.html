@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyFinancePal</title>
+</head>
+<body>
+    <h1>Welcome to your finance app. Here are the stocks you have:</h1>
+
+    <table style="background-repeat:no-repeat; width:450px;margin:0;" cellpadding="0" cellspacing="0" border="0">
+        <tr style="height:40px; width:450px; margin:0;">
+            <th style="height:40px; width:10px; margin:0;">Ticker</th>
+            <th style="height:40px; width:10px; margin:0;">Company</th>
+            <th style="height:40px; width:10px; margin:0;">Country</th>
+            <th style="height:40px; width:10px; margin:0;"></th>
+        </tr>
+        {% for x in stocks %}
+            <tr style="height:40px; width:450px; margin:0;">
+                <td style="height:40px; width:10px; margin:0;">{{ x.ticker }}</td>
+                <td style="height:40px; width:10px; margin:0;">{{ x.company }}</td>
+                <td style="height:40px; width:10px; margin:0;">{{ x.country }}</td>
+                <td style="height:40px; width:10px; margin:0;">
+                    <form action="{{ url_for('delete', ticker=x.ticker) }}" method="post">
+                        <input class="danger" type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('create') }}">Add stock</a>
+</body>
+</html>

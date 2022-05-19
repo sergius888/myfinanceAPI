@@ -1,0 +1,7 @@
+# add a new router for futures (oil, oats, etc)
+# examples of tickers: for oil -> CL=F, for wheat -> ZW=F
+# create a new object to represent the data from futures
+#       -> name, exchange, symbol, lowest price in 52weeks, highest price in 52weeks, yesterday price, current price
+# create a repo for it and a new table in our database
+# current price should be refreshed every 10min, other pirces once per day
+# add at least 2 futures & have a get to list all of them with their data
