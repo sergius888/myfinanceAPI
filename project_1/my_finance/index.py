@@ -24,10 +24,11 @@ from my_finance.api.health import health_router
 from my_finance.api.diagrams import diagrams_router
 
 app = FastAPI(
-    title="Name of our app",  # TODO for homework, name your application
+    title="MyFinance API",
     # <major_version>.<minor_version>.<patch_version>
     version="1.0.0",  # increase version after finishing homework
-    description="",  # TODO add a description
+    description="A web application that allows you to access financial data, "
+                "stock prices and charts, using Yahoo Finance data"
 )
 app.include_router(stocks_router)
 app.include_router(health_router)
