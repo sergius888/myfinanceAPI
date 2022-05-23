@@ -6,8 +6,8 @@ from my_finance.stockk.stock import Stock
 
 
 class StockFactory:
-    #TODO what if we enter an invalid ticker?
-    #TODO add yesterday's price & today's price, should update based on date
+    # TODO what if we enter an invalid ticker?
+    # TODO add yesterday's price & today's price, should update based on date
     def make_from_model(self, model: StockModel) -> Stock:
         yf_ticker = yfinance.Ticker(model.ticker)
         print(yf_ticker.info)

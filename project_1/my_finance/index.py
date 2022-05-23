@@ -28,7 +28,7 @@ app = FastAPI(
     # <major_version>.<minor_version>.<patch_version>
     version="1.0.0",  # increase version after finishing homework
     description="A web application that allows you to access financial data, "
-                "stock prices and charts, using Yahoo Finance data"
+    "stock prices and charts, using Yahoo Finance data",
 )
 app.include_router(stocks_router)
 app.include_router(health_router)
@@ -76,4 +76,6 @@ def update_prices():
 
 @app.exception_handler(StockNotFound)
 def handle_stock_not_found(exception, request):
-    return JSONResponse(content="The stockk you requested was not saved in our app!", status_code=404)
+    return JSONResponse(
+        content="The stockk you requested was not saved in our app!", status_code=404
+    )

@@ -1,13 +1,17 @@
 # step1: read the file or database
 print("STEP1: Reading the file ...")
-file = open("../my_finance/database/database.txt")  # in path, a single dot . -> current directory, .. -> parent directory
+file = open(
+    "../my_finance/database/database.txt"
+)  # in path, a single dot . -> current directory, .. -> parent directory
 contents = file.read()
 file.close()
 import json
+
 stocks = json.loads(contents)
 
 print("STEP2: Adding longSummary & exchange info to current data ...")
 import yfinance
+
 for s in stocks:  # stocks is a list of dicts
     print("Adding new data for this stockk info ... ", s)
     yf_ticker = yfinance.Ticker(s["ticker"])

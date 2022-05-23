@@ -11,7 +11,7 @@ app = Flask(__name__)
 conf = Configuration()
 print(conf.get_db_type())
 if conf.get_db_type() == "file":
-    print('file x 2')
+    print("file x 2")
     persistance = StockFilePersistance(conf.get_db_path())
 if conf.get_db_type() == "sql":
     persistance = StockSqlPersistance(conf.get_db_path())
@@ -30,15 +30,15 @@ def hello():
 @app.route("/stocks/<ticker>/delete", methods=["POST"])
 def delete(ticker):
     stock_repo.remove(ticker)
-    return redirect(url_for('hello'))
+    return redirect(url_for("hello"))
 
 
 @app.route("/stocks", methods=["GET", "POST"])
 def create():
     if request.method == "POST":
-        model = StockModel(ticker=request.form['ticker'])
+        model = StockModel(ticker=request.form["ticker"])
         new_stock = StockFactory().make_from_model(model)
         stock_repo.add(new_stock)
-        return redirect(url_for('hello'))
+        return redirect(url_for("hello"))
     if request.method == "GET":
         return render_template("add_new_stock.html")

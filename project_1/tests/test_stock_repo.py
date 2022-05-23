@@ -41,6 +41,5 @@ class StockRepoTest(unittest.TestCase):
         self.assertCountEqual([], StockRepository.stocks.values())
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

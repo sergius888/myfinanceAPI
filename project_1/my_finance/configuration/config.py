@@ -17,4 +17,3 @@ class Configuration:
 
     def get_db_path(self) -> str:
         return self.conf["database"]["path"]
-

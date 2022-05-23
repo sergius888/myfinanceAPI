@@ -1,4 +1,5 @@
-#TODO Add StockAlreadyAdded
+# TODO Add StockAlreadyAdded
+
 
 class StockNotFound(Exception):
     pass

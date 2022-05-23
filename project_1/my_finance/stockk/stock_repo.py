@@ -48,10 +48,15 @@ class StockRepository:
         items = StockRepository.persistance.get_all()
         # items = list of dictionaries from the file
         for one_item in items:
-            new_stock = Stock(one_item["ticker"], one_item["company"], one_item["field"],
-                              one_item["country"], one_item["numberOfEmployees"], one_item["amount"])
+            new_stock = Stock(
+                one_item["ticker"],
+                one_item["company"],
+                one_item["field"],
+                one_item["country"],
+                one_item["numberOfEmployees"],
+                one_item["amount"],
+            )
             if "longSummary" in one_item and "exchange" in one_item:
                 new_stock.set_long_summary(one_item["longSummary"])
                 new_stock.set_exchange(one_item["exchange"])
             StockRepository.stocks[one_item["ticker"]] = new_stock
-

@@ -17,7 +17,12 @@ def add_new_stock(stock_info: StockModel):
 
 # example if you want to do a tasks app return the list of tasks, and rename the url /items -> /tasks
 @stocks_router.get("", response_model=list[StockModel])
-def get_stocks(field: str = None, min_employees: int = None, page: int = None, items_per_page: int = None):
+def get_stocks(
+    field: str = None,
+    min_employees: int = None,
+    page: int = None,
+    items_per_page: int = None,
+):
     stocks = stocks_repo.get_all()
     if field:
         stocks = [s for s in stocks if s.field == field]
@@ -25,10 +30,14 @@ def get_stocks(field: str = None, min_employees: int = None, page: int = None, i
         stocks = [s for s in stocks if s.number_of_employees >= min_employees]
     if page is not None and page >= 0:
         # below, it's called a ternary operator
-        number_of_items_per_page = items_per_page if items_per_page else conf.get_number_of_items_per_page()
+        number_of_items_per_page = (
+            items_per_page if items_per_page else conf.get_number_of_items_per_page()
+        )
         # page = 0, 0:2
         # page = 1, 2:4
-        stocks = stocks[page * number_of_items_per_page:(page + 1) * number_of_items_per_page]
+        stocks = stocks[
+            page * number_of_items_per_page : (page + 1) * number_of_items_per_page
+        ]
     return stocks
 
 

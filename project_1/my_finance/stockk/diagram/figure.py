@@ -15,7 +15,9 @@ def show_simple_diagram(ticker_id: str, info: str = "Close", interval: str = "3y
 
 
 def create_and_save_to_file(model: DiagramModel):
-    dataframe = yfinance.download(model.tickers, start=model.start_date, end=model.end_date)
+    dataframe = yfinance.download(
+        model.tickers, start=model.start_date, end=model.end_date
+    )
     figure, axis = pyplot.subplots(figsize=(16, 9))
     for key in dataframe[model.info]:
         axis.plot(dataframe[model.info].index, dataframe[model.info][key])
@@ -31,4 +33,3 @@ def __get_the_data_frame(interval, ticker_id):
     dataframe = tsla.history(interval)
     dataframe.reset_index()
     return dataframe
-

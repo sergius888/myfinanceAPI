@@ -8,9 +8,9 @@ class StockFilePersistance(StockPersistanceInterface):
         self.path = path
 
     def get_all(self) -> list[dict]:
-        print('get all')
+        print("get all")
         file = open(self.path)
-        print('file opened')
+        print("file opened")
         json_items = file.read()
         file.close()
         items = json.loads(json_items)
