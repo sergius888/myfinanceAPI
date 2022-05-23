@@ -2,8 +2,8 @@ import unittest
 from unittest.mock import Mock
 
 from my_finance.exceptions import CannotAddStock
-from my_finance.stock.stock_repo import StockRepository
-from my_finance.stock.stock import Stock
+from my_finance.stockk.stock_repo import StockRepository
+from my_finance.stockk.stock import Stock
 
 
 class StockRepoTest(unittest.TestCase):
