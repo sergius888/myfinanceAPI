@@ -10,16 +10,6 @@
     "country": "United States"
   },
   {
-    "ticker": "AMZN",
-    "company": "Amazon.com, Inc.",
-    "amount": 0,
-    "field": "Consumer Cyclical",
-    "longSummary": "Amazon.com, Inc. engages in the retail sale of consumer products and subscriptions in North America and internationally. The company operates through three segments: North America, International, and Amazon Web Services (AWS). It sells merchandise and content purchased for resale from third-party sellers through physical and online stores. The company also manufactures and sells electronic devices, including Kindle, Fire tablets, Fire TVs, Rings, and Echo and other devices; provides Kindle Direct Publishing, an online service that allows independent authors and publishers to make their books available in the Kindle Store; and develops and produces media content. In addition, it offers programs that enable sellers to sell their products on its websites, as well as its stores; and programs that allow authors, musicians, filmmakers, Twitch streamers, skill and app developers, and others to publish and sell content. Further, the company provides compute, storage, database, analytics, machine learning, and other services, as well as fulfillment, advertising, publishing, and digital content subscriptions. Additionally, it offers Amazon Prime, a membership program, which provides free shipping of various items; access to streaming of movies and series; and other services. The company serves consumers, sellers, developers, enterprises, and content creators. Amazon.com, Inc. was incorporated in 1994 and is headquartered in Seattle, Washington.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 1608000
-  },
-  {
     "ticker": "MSFT",
     "company": "Microsoft Corporation",
     "amount": 0,
@@ -28,36 +18,6 @@
     "exchange": "NMS",
     "country": "United States",
     "numberOfEmployees": 181000
-  },
-  {
-    "ticker": "GOOG",
-    "company": "Alphabet Inc.",
-    "amount": 0,
-    "field": "Communication Services",
-    "longSummary": "Alphabet Inc. provides various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets segments. The Google Services segment offers products and services, including ads, Android, Chrome, hardware, Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, and YouTube. It is also involved in the sale of apps and in-app purchases and digital content in the Google Play store; and Fitbit wearable devices, Google Nest home products, Pixel phones, and other devices, as well as in the provision of YouTube non-advertising services. The Google Cloud segment offers infrastructure, platform, and other services; Google Workspace that include cloud-based collaboration tools for enterprises, such as Gmail, Docs, Drive, Calendar, and Meet; and other services for enterprise customers. The Other Bets segment sells health technology and internet services. The company was founded in 1998 and is headquartered in Mountain View, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 156500
-  },
-  {
-    "ticker": "PLTR",
-    "company": "Palantir Technologies Inc.",
-    "amount": 0,
-    "field": "Technology",
-    "longSummary": "Palantir Technologies Inc. builds and deploys software platforms for the intelligence community in the United States to assist in counterterrorism investigations and operations. The company provides palantir gotham, a software platform which enables users to identify patterns hidden deep within datasets, ranging from signals intelligence sources to reports from confidential informants, as well as facilitates the handoff between analysts and operational users, helping operators plan and execute real-world responses to threats that have been identified within the platform. It also offers palantir foundry, a platform that transforms the ways organizations operate by creating a central operating system for their data; and allows individual users to integrate and analyze the data they need in one place. In addition, it provides apollo, a software that enables customers to deploy their own software virtually in any environment. Palantir Technologies Inc. was incorporated in 2003 and is based in Denver, Colorado.",
-    "exchange": "NYQ",
-    "country": "United States",
-    "numberOfEmployees": 2920
-  },
-  {
-    "ticker": "PTON",
-    "company": "Peloton Interactive, Inc.",
-    "amount": 0,
-    "field": "Consumer Cyclical",
-    "longSummary": "Peloton Interactive, Inc. provides interactive fitness products in North America and internationally. It offers connected fitness products with touchscreen that streams live and on-demand classes under the Peloton Bike, Peloton Bike+, Peloton Tread, and Peloton Tread+ names. The company also provides connected fitness subscriptions for various household users, and access to various live and on-demand classes, as well as Peloton Digital app for connected fitness subscribers to provide access to its classes. As of June 30, 2021, it had approximately 5.9 million members. The company markets and sells its interactive fitness products directly through its retail showrooms and at onepeloton.com. Peloton Interactive, Inc. was founded in 2012 and is headquartered in New York, New York.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 8662
   },
   {
     "ticker": "WMT",
@@ -80,16 +40,6 @@
     "numberOfEmployees": 154000
   },
   {
-    "ticker": "GOOG",
-    "company": "Alphabet Inc.",
-    "amount": 0,
-    "field": "Communication Services",
-    "longSummary": "Alphabet Inc. provides various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets segments. The Google Services segment offers products and services, including ads, Android, Chrome, hardware, Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, and YouTube. It is also involved in the sale of apps and in-app purchases and digital content in the Google Play store; and Fitbit wearable devices, Google Nest home products, Pixel phones, and other devices, as well as in the provision of YouTube non-advertising services. The Google Cloud segment offers infrastructure, platform, and other services; Google Workspace that include cloud-based collaboration tools for enterprises, such as Gmail, Docs, Drive, Calendar, and Meet; and other services for enterprise customers. The Other Bets segment sells health technology and internet services. The company was founded in 1998 and is headquartered in Mountain View, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 163906
-  },
-  {
     "ticker": "PLTR",
     "company": "Palantir Technologies Inc.",
     "amount": 0,
@@ -98,5 +48,25 @@
     "exchange": "NYQ",
     "country": "United States",
     "numberOfEmployees": 3057
+  },
+  {
+    "ticker": "PTON",
+    "company": "Peloton Interactive, Inc.",
+    "amount": 0,
+    "field": "Consumer Cyclical",
+    "longSummary": "Peloton Interactive, Inc. provides interactive fitness products in North America and internationally. It offers connected fitness products with touchscreen that streams live and on-demand classes under the Peloton Bike, Peloton Bike+, Peloton Tread, and Peloton Tread+ names. The company also provides connected fitness subscriptions for various household users, and access to various live and on-demand classes, as well as Peloton Digital app for connected fitness subscribers to provide access to its classes. As of June 30, 2021, it had approximately 5.9 million members. The company markets and sells its interactive fitness products directly through its retail showrooms and at onepeloton.com. Peloton Interactive, Inc. was founded in 2012 and is headquartered in New York, New York.",
+    "exchange": "NMS",
+    "country": "United States",
+    "numberOfEmployees": 8662
+  },
+  {
+    "ticker": "FB",
+    "company": "Meta Platforms, Inc.",
+    "amount": 0,
+    "field": "Communication Services",
+    "longSummary": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, wearables, and in-home devices worldwide. It operates in two segments, Family of Apps and Reality Labs. The Family of Apps segment's products include Facebook, which enables people to share, discover, and connect with interests; Instagram, a community for sharing photos, videos, and private messages, as well as feed, stories, reels, video, live, and shops; Messenger, a messaging application for people to connect with friends, family, groups, and businesses across platforms and devices through chat, audio and video calls, and rooms; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact privately. The Reality Labs segment provides augmented and virtual reality related products comprising virtual reality hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. Meta Platforms, Inc. was incorporated in 2004 and is headquartered in Menlo Park, California.",
+    "exchange": "NMS",
+    "country": "United States",
+    "numberOfEmployees": 77805
   }
 ]

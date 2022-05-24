@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 
+from my_finance.exceptions import StockAlreadyAdded
 from my_finance.models import StockModel, StockExtendedModel
 from my_finance.stockk.stock_factory import StockFactory
 from my_finance.stockk.stock import Stock

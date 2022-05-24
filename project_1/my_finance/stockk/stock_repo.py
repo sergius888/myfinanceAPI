@@ -1,5 +1,5 @@
 from my_finance.stockk.stock import Stock
-from my_finance.exceptions import StockNotFound, CannotAddStock
+from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded
 
 
 class StockRepository:
@@ -18,18 +18,21 @@ class StockRepository:
             "country": new_stock.country,
             "numberOfEmployees": new_stock.number_of_employees,
         }
-        try:
-            StockRepository.persistance.add(stock_info)
-        except Exception as e:
-            raise CannotAddStock("Could not add stockk. Reason: " + str(e))
-        StockRepository.stocks[new_stock.ticker] = new_stock
+        if new_stock.ticker not in StockRepository.stocks:
+            try:
+                StockRepository.persistance.add(stock_info)
+            except Exception as e:
+                raise CannotAddStock("Could not add stock. Reason: " + str(e))
+            StockRepository.stocks[new_stock.ticker] = new_stock
+        else:
+            raise StockAlreadyAdded()
 
     @staticmethod
     def get_all() -> list[Stock]:
         print([s.price for s in StockRepository.stocks.values()])
         return list(StockRepository.stocks.values())
 
-    # if we do not have the stockk, we can raise an error or return None
+    # if we do not have the stock, we can raise an error or return None
     @staticmethod
     def get_by_ticker(ticker: str) -> Stock:
         if ticker in StockRepository.stocks.keys():
@@ -40,8 +43,13 @@ class StockRepository:
 
     @staticmethod
     def remove(stock_id: str):
-        StockRepository.stocks.pop(stock_id)
-        StockRepository.persistance.remove(stock_id)
+        if stock_id in StockRepository.stocks.keys():
+            StockRepository.stocks.pop(stock_id)
+            StockRepository.persistance.remove(stock_id)
+        else:
+            raise StockNotFound()
+
+
 
     @staticmethod
     def load():
