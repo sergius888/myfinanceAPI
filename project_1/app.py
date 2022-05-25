@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request, json
-from werkzeug.exceptions import HTTPException
+from my_finance.exceptions import StockAlreadyAdded
 from my_finance.stockk.stock_repo import StockRepository
 from my_finance.stockk.stock_factory import StockFactory
 from my_finance.models import StockModel
@@ -39,8 +39,13 @@ def create():
     if request.method == "POST":
         model = StockModel(ticker=request.form["ticker"])
         new_stock = StockFactory().make_from_model(model)
-        stock_repo.add(new_stock)
-        return redirect(url_for("hello"))
+        try:
+            stock_repo.add(new_stock)
+            return redirect(url_for("hello"))
+        except:
+            return render_template("error_display.html", company=new_stock.company,
+                                   ticker=new_stock.ticker)
+
     if request.method == "GET":
         return render_template("add_new_stock.html")
 

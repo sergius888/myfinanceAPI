@@ -73,6 +73,7 @@ def update_prices():
 
 @app.exception_handler(StockNotFound)
 def handle_stock_not_found(exception, request):
+    # raised for get and delete stocks which does not exist.
     return JSONResponse(
         content="The stock you requested was not saved in our app!", status_code=404
     )
@@ -83,3 +84,4 @@ def stock_already_added(exception, request):
     return JSONResponse(
         content="The stock is already added in our app.", status_code=400
     )
+

@@ -68,5 +68,25 @@
     "exchange": "NMS",
     "country": "United States",
     "numberOfEmployees": 77805
+  },
+  {
+    "ticker": "TWTR",
+    "company": "Twitter, Inc.",
+    "amount": 0,
+    "field": "Communication Services",
+    "longSummary": "Twitter, Inc. operates as a platform for public self-expression and conversation in real-time. The company's primary product is Twitter, a platform that allows users to consume, create, distribute, and discover content. It also provides promoted products that enable advertisers to promote brands, products, and services, as well as enable advertisers to target an audience based on various factors, including who an account follows and actions taken on its platform, such as Tweets created and engagement with Tweets. Its promoted products consist of promoted ads and Twitter Amplify, Follower Ads, and Twitter takeover. In addition, the company offers monetization products for creators, including Tips to directly send small one-time payments on Twitter using various payment methods, including bitcoin; Super Follows, a paid monthly subscription, which includes bonus content, exclusive previews, and perks as a way to support and connect with creators on Twitter; and Ticketed Spaces to support creators on Twitter for their time and effort in hosting, speaking, and moderating the public conversation on Twitter Spaces. Further, it offers products for developers and data partners comprising Twitter Developer Platform, a platform that enables developers to build tools for people and businesses using its public application programming interface; and paid access to Twitter data for partners with commercial use cases. Twitter, Inc. was founded in 2006 and is based in San Francisco, California.",
+    "exchange": "NYQ",
+    "country": "United States",
+    "numberOfEmployees": 7500
+  },
+  {
+    "ticker": "SPCE",
+    "company": "Virgin Galactic Holdings, Inc.",
+    "amount": 0,
+    "field": "Industrials",
+    "longSummary": "Virgin Galactic Holdings, Inc. focuses on the development, manufacture, and operation of spaceships and related technologies for conducting commercial human spaceflight and flying commercial research and development payloads into space. It is also involved in the ground and flight testing, and post-flight maintenance of its spaceflight system vehicles. The company serves private individuals, researchers, and government agencies. Virgin Galactic Holdings, Inc. was founded in 2017 is headquartered in Las Cruces, New Mexico. Virgin Galactic Holdings, Inc. was a former subsidiary of Virgin Orbit Holdings, Inc.",
+    "exchange": "NYQ",
+    "country": "United States",
+    "numberOfEmployees": 804
   }
 ]
