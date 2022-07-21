@@ -5,9 +5,9 @@ from my_finance.models import StockModel, StockExtendedModel
 from my_finance.stockk.stock_factory import StockFactory
 from my_finance.stockk.stock import Stock
 from my_finance.stockk.stock_repo import StockRepository
-
 stocks_router = APIRouter(prefix="/stocks")
 stocks_repo = StockRepository()
+
 
 
 @stocks_router.post("")
@@ -45,12 +45,17 @@ def get_stocks(
 # we can put an id in the URL to select only one resource
 @stocks_router.get("/{ticker_id}", response_model=StockExtendedModel)
 def get_one_stock(ticker_id: str):
-    return stocks_repo.get_by_ticker(ticker_id)
+    return stocks_repo.get_by_ticker(ticker_id.upper())
 
-
-# TODO add a put method to edit your domain item
 
 
 @stocks_router.delete("")
-def remove_stock(ticker: str):
-    stocks_repo.remove(ticker)
+def remove_stock(ticker_id: str):
+    stocks_repo.remove(ticker_id.upper())
+
+
+@stocks_router.put("")
+def add_or_remove_shares(ticker_id: str, shares: float):
+    stocks_repo.edit_amount(ticker_id.upper(), shares)
+
+

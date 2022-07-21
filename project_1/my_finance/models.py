@@ -1,7 +1,6 @@
 from pydantic import BaseModel, Field
 
 
-# TODO create model for adding a stockk & a model for getting a stockk
 # if another domain in your project, create different models for POST & GET
 class StockModel(BaseModel):
     ticker: str = Field(
@@ -12,6 +11,7 @@ class StockModel(BaseModel):
     )
     field: str = Field(default="")
     price: float = Field(default=-1, description="Current price updated in real time")
+    shares_owned: float = Field(default=0, description="The amount of shares you own")
 
     class Config:
         orm_mode = True
@@ -22,8 +22,8 @@ class StockExtendedModel(StockModel):
     exchange: str = Field(
         description="The name of the exchange where the company is listed"
     )
-    country: str = Field()  # TODO add description
-    number_of_employees: str = Field()  # TODO add description
+    country: str = Field(description="The country of company's headquarter")
+    number_of_employees: str = Field(description="Number of employees")
 
 
 class DiagramModel(BaseModel):

@@ -10,6 +10,7 @@
 
 import yfinance
 import logging
+import webbrowser
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi_utils.tasks import repeat_every
@@ -84,4 +85,11 @@ def stock_already_added(exception, request):
     return JSONResponse(
         content="The stock is already added in our app.", status_code=400
     )
+
+# def get_current_price(symbol):
+#     ticker = yfinance.Ticker(symbol)
+#     todays_data = ticker.history(period='1d')
+#     return todays_data['Close'][0]
+#
+# print(get_current_price('TSLA'))
 

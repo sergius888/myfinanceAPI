@@ -6,6 +6,8 @@ class StockRepository:
     stocks = {}
     persistance = None
 
+
+
     @staticmethod
     def add(new_stock: Stock):
         stock_info = {
@@ -50,7 +52,6 @@ class StockRepository:
             raise StockNotFound()
 
 
-
     @staticmethod
     def load():
         items = StockRepository.persistance.get_all()
@@ -68,3 +69,25 @@ class StockRepository:
                 new_stock.set_long_summary(one_item["longSummary"])
                 new_stock.set_exchange(one_item["exchange"])
             StockRepository.stocks[one_item["ticker"]] = new_stock
+
+
+    @staticmethod
+    def edit_amount(ticker_id: str, amnt: float):
+        if ticker_id in StockRepository.stocks.keys():
+            StockRepository.persistance.update(ticker_id, amnt)
+        else:
+            raise StockNotFound()
+
+
+
+
+'''
+TODO
+Delete shares 
++
+Add exceptions for stock not found DONE
++
+Make program accept lowkey ticker input
+'''
+
+
