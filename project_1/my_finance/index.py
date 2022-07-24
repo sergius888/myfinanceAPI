@@ -17,9 +17,9 @@ from fastapi_utils.tasks import repeat_every
 
 from my_finance.stockk.stock_repo import StockRepository
 from my_finance.configuration.config import Configuration
-from my_finance.database.stock_file_persistance import StockFilePersistance
-from my_finance.database.stock_sql_persistance import StockSqlPersistance
-from my_finance.exceptions import StockNotFound, StockAlreadyAdded
+from my_finance.database.stock_file_persistence import StockFilePersistance
+from my_finance.database.stock_sql_persistence import StockSqlPersistance
+from my_finance.exceptions import StockNotFound, StockAlreadyAdded, StockCodeInvalid
 from my_finance.api.stocks import stocks_router
 from my_finance.api.health import health_router
 from my_finance.api.diagrams import diagrams_router
@@ -37,10 +37,10 @@ app.include_router(diagrams_router)
 
 conf = Configuration()
 if conf.get_db_type() == "file":
-    persistance = StockFilePersistance(conf.get_db_path())
+    persistence = StockFilePersistance(conf.get_db_path())
 if conf.get_db_type() == "sql":
-    persistance = StockSqlPersistance(conf.get_db_path())
-StockRepository.persistance = persistance
+    persistence = StockSqlPersistance(conf.get_db_path())
+StockRepository.persistence = persistence
 stock_repo = StockRepository()
 
 logging.basicConfig(filename="finance.log", encoding="utf-8", level=logging.DEBUG)
@@ -56,7 +56,7 @@ def load_list_of_items():
 
 
 @app.on_event("startup")
-@repeat_every(seconds=5 * 60, wait_first=True)  # every 5 seconds we run this function
+@repeat_every(seconds=5 * 10, wait_first=True)  # every 5 seconds we run this function
 def update_prices():
     # get all stocks
     # get price (yfinance)
@@ -69,7 +69,8 @@ def update_prices():
     for a_ticker in tickers:
         yf_ticker = yfinance.Ticker(a_ticker)
         price = yf_ticker.info["currentPrice"]
-        stock_repo.stocks[a_ticker].set_price(price)
+        y_price = yf_ticker.info["previousClose"]
+        stock_repo.stocks[a_ticker].set_price(price, y_price)
 
 
 @app.exception_handler(StockNotFound)
@@ -86,10 +87,19 @@ def stock_already_added(exception, request):
         content="The stock is already added in our app.", status_code=400
     )
 
+@app.exception_handler(StockCodeInvalid)
+def stock_already_added(exception, request):
+    return JSONResponse(
+        content="The stock code requested is not valid. Please check again!", status_code=500
+    )
+
+
 # def get_current_price(symbol):
 #     ticker = yfinance.Ticker(symbol)
 #     todays_data = ticker.history(period='1d')
 #     return todays_data['Close'][0]
 #
 # print(get_current_price('TSLA'))
+
+
 

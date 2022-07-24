@@ -48,7 +48,6 @@ def get_one_stock(ticker_id: str):
     return stocks_repo.get_by_ticker(ticker_id.upper())
 
 
-
 @stocks_router.delete("")
 def remove_stock(ticker_id: str):
     stocks_repo.remove(ticker_id.upper())
@@ -59,3 +58,28 @@ def add_or_remove_shares(ticker_id: str, shares: float):
     stocks_repo.edit_amount(ticker_id.upper(), shares)
 
 
+'''
+        TODO
+        1. Create nested dict that contain:
+            
+            ...
+            
+            "amount": "20",
+            "current_value": " 5*at_price + (-3*at_price) ... "
+            "historical_trans":
+            [
+                {
+                "shares": "5",
+                "at_price": ""
+                "at_Date": "date"  
+                }
+                {
+                "shares": "-7",  -- prevent this ##
+                "at_price": ""
+                "at_Date": "date"  
+                }
+            ]
+        
+        
+
+'''

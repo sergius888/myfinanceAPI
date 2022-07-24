@@ -1,6 +1,6 @@
 import json
 
-from my_finance.stockk.persistance_interface import StockPersistanceInterface
+from my_finance.stockk.persistence_interface import StockPersistanceInterface
 
 
 class StockFilePersistance(StockPersistanceInterface):
@@ -42,6 +42,8 @@ class StockFilePersistance(StockPersistanceInterface):
                 print("condition checks")
                 x["amount"] += amount
         self.__save(items)
+
+
 
     # def update_db(self, amount: float):
     #     items = self.get_all()

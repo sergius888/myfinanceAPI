@@ -4,7 +4,7 @@ from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdd
 
 class StockRepository:
     stocks = {}
-    persistance = None
+    persistence = None
 
 
 
@@ -22,7 +22,7 @@ class StockRepository:
         }
         if new_stock.ticker not in StockRepository.stocks:
             try:
-                StockRepository.persistance.add(stock_info)
+                StockRepository.persistence.add(stock_info)
             except Exception as e:
                 raise CannotAddStock("Could not add stock. Reason: " + str(e))
             StockRepository.stocks[new_stock.ticker] = new_stock
@@ -43,18 +43,20 @@ class StockRepository:
             raise StockNotFound()
         # return StockFactory().make_extended_stock(ticker)
 
+
+
     @staticmethod
     def remove(stock_id: str):
         if stock_id in StockRepository.stocks.keys():
             StockRepository.stocks.pop(stock_id)
-            StockRepository.persistance.remove(stock_id)
+            StockRepository.persistence.remove(stock_id)
         else:
             raise StockNotFound()
 
 
     @staticmethod
     def load():
-        items = StockRepository.persistance.get_all()
+        items = StockRepository.persistence.get_all()
         # items = list of dictionaries from the file
         for one_item in items:
             new_stock = Stock(
@@ -74,20 +76,10 @@ class StockRepository:
     @staticmethod
     def edit_amount(ticker_id: str, amnt: float):
         if ticker_id in StockRepository.stocks.keys():
-            StockRepository.persistance.update(ticker_id, amnt)
+            StockRepository.persistence.update(ticker_id, amnt)
         else:
             raise StockNotFound()
 
 
-
-
-'''
-TODO
-Delete shares 
-+
-Add exceptions for stock not found DONE
-+
-Make program accept lowkey ticker input
-'''
 
 

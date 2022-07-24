@@ -14,3 +14,8 @@ class StockAlreadyAdded(Exception):
     pass
 
 
+class StockCodeInvalid(Exception):
+    pass
+
+
+

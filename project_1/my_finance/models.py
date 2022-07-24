@@ -10,8 +10,9 @@ class StockModel(BaseModel):
         default="", description="The full company name, leave empty for POST"
     )
     field: str = Field(default="")
+    yesterday_price: float = Field(default=-1, description="Last close day price")
     price: float = Field(default=-1, description="Current price updated in real time")
-    shares_owned: float = Field(default=0, description="The amount of shares you own")
+    amount: float = Field(default=0, description="The amount of shares you own")
 
     class Config:
         orm_mode = True

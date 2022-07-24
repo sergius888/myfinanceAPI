@@ -1,75 +1,5 @@
 [
   {
-    "ticker": "PATH",
-    "company": "UiPath Inc.",
-    "amount": 29.0,
-    "field": "Technology",
-    "longSummary": "UiPath Inc. provides an end-to-end automation platform that offers a range of robotic process automation (RPA) solutions primarily in the United States, Romania, and Japan. It develops UiPath Studio, a platform designed for RPA developers looking to build complex process automations with built-in governance capabilities, such as robust debugging tools, application programming interface automation, wizards to automate desktop or web applications, leverage custom code, and to integrate machine learning models into production workflows. The company also offers UiPath Robots, which emulates human behavior to execute the processes built in UiPath Studio; and UiPath Orchestrator that tracks and logs robot activity, along with what people do in tandem to maintain strict compliance and governance through dashboards and visualization tools. In addition, it provides maintenance and support for its software, as well as professional services, such as training and implementation services to facilitate the adoption of its platform. UiPath Inc. was founded in 2005 and is headquartered in New York, New York.",
-    "exchange": "NYQ",
-    "numberOfEmployees": 2863,
-    "country": "United States"
-  },
-  {
-    "ticker": "MSFT",
-    "company": "Microsoft Corporation",
-    "amount": 0,
-    "field": "Technology",
-    "longSummary": "Microsoft Corporation develops, licenses, and supports software, services, devices, and solutions worldwide. Its Productivity and Business Processes segment offers Office, Exchange, SharePoint, Microsoft Teams, Office 365 Security and Compliance, and Skype for Business, as well as related Client Access Licenses (CAL); Skype, Outlook.com, OneDrive, and LinkedIn; and Dynamics 365, a set of cloud-based and on-premises business solutions for organizations and enterprise divisions. Its Intelligent Cloud segment licenses SQL, Windows Servers, Visual Studio, System Center, and related CALs; GitHub that provides a collaboration platform and code hosting service for developers; and Azure, a cloud platform. It also offers support services and Microsoft consulting services to assist customers in developing, deploying, and managing Microsoft server and desktop solutions; and training and certification on Microsoft products. Its More Personal Computing segment provides Windows original equipment manufacturer (OEM) licensing and other non-volume licensing of the Windows operating system; Windows Commercial, such as volume licensing of the Windows operating system, Windows cloud services, and other Windows commercial offerings; patent licensing; Windows Internet of Things; and MSN advertising. It also offers Surface, PC accessories, PCs, tablets, gaming and entertainment consoles, and other devices; Gaming, including Xbox hardware, and Xbox content and services; video games and third-party video game royalties; and Search, including Bing and Microsoft advertising. It sells its products through OEMs, distributors, and resellers; and directly through digital marketplaces, online stores, and retail stores. It has collaborations with Dynatrace, Inc., Morgan Stanley, Micro Focus, WPP plc, ACI Worldwide, Inc., and iCIMS, Inc., as well as strategic relationships with Avaya Holdings Corp. and wejo Limited. Microsoft Corporation was founded in 1975 and is based in Redmond, Washington.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 181000
-  },
-  {
-    "ticker": "WMT",
-    "company": "Walmart Inc.",
-    "amount": 0,
-    "field": "Consumer Defensive",
-    "longSummary": "Walmart Inc. engages in the operation of retail, wholesale, and other units worldwide. The company operates through three segments: Walmart U.S., Walmart International, and Sam's Club. It operates supercenters, supermarkets, hypermarkets, warehouse clubs, cash and carry stores, and discount stores; membership-only warehouse clubs; ecommerce websites, such as walmart.com, walmart.com.mx, walmart.ca, flipkart.com, and samsclub.com; and mobile commerce applications. The company offers grocery and consumables, which includes dairy, meat, bakery, deli, produce, dry, chilled or frozen packaged foods, alcoholic and nonalcoholic beverages, floral, snack foods, candy, other grocery items, health and beauty aids, paper goods, laundry and home care, baby care, pet supplies, and other consumable items; and health and wellness products covering pharmacy, over-the-counter drugs and other medical products, and optical and hearing services. It also provides gasoline stations and tobacco; home improvement, outdoor living, gardening, furniture, apparel, jewelry, tools and power equipment, housewares, toys, seasonal items, mattresses, and tire and battery centers; and consumer electronics and accessories, software, video games, office supplies, appliances, and third-party gift cards. In addition, the company offers fuel and financial services and related products, including money orders, prepaid cards, money transfers, and check cashing and bill payment, as well as various types of installment lending. It operates approximately 10,500 stores and various e-commerce websites under 46 banners in 24 countries. The company was formerly known as Wal-Mart Stores, Inc. and changed its name to Walmart Inc. in February 2018. The company was founded in 1945 and is based in Bentonville, Arkansas.",
-    "exchange": "NYQ",
-    "country": "United States",
-    "numberOfEmployees": 2300000
-  },
-  {
-    "ticker": "PLTR",
-    "company": "Palantir Technologies Inc.",
-    "amount": 0,
-    "field": "Technology",
-    "longSummary": "Palantir Technologies Inc. builds and deploys software platforms for the intelligence community in the United States to assist in counterterrorism investigations and operations. The company provides palantir gotham, a software platform which enables users to identify patterns hidden deep within datasets, ranging from signals intelligence sources to reports from confidential informants, as well as facilitates the handoff between analysts and operational users, helping operators plan and execute real-world responses to threats that have been identified within the platform. It also offers palantir foundry, a platform that transforms the ways organizations operate by creating a central operating system for their data; and allows individual users to integrate and analyze the data they need in one place. In addition, it provides apollo, a software that enables customers to deploy their own software virtually in any environment. Palantir Technologies Inc. was incorporated in 2003 and is based in Denver, Colorado.",
-    "exchange": "NYQ",
-    "country": "United States",
-    "numberOfEmployees": 3057
-  },
-  {
-    "ticker": "PTON",
-    "company": "Peloton Interactive, Inc.",
-    "amount": 0,
-    "field": "Consumer Cyclical",
-    "longSummary": "Peloton Interactive, Inc. provides interactive fitness products in North America and internationally. It offers connected fitness products with touchscreen that streams live and on-demand classes under the Peloton Bike, Peloton Bike+, Peloton Tread, and Peloton Tread+ names. The company also provides connected fitness subscriptions for various household users, and access to various live and on-demand classes, as well as Peloton Digital app for connected fitness subscribers to provide access to its classes. As of June 30, 2021, it had approximately 5.9 million members. The company markets and sells its interactive fitness products directly through its retail showrooms and at onepeloton.com. Peloton Interactive, Inc. was founded in 2012 and is headquartered in New York, New York.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 8662
-  },
-  {
-    "ticker": "TWTR",
-    "company": "Twitter, Inc.",
-    "amount": 0,
-    "field": "Communication Services",
-    "longSummary": "Twitter, Inc. operates as a platform for public self-expression and conversation in real-time. The company's primary product is Twitter, a platform that allows users to consume, create, distribute, and discover content. It also provides promoted products that enable advertisers to promote brands, products, and services, as well as enable advertisers to target an audience based on various factors, including who an account follows and actions taken on its platform, such as Tweets created and engagement with Tweets. Its promoted products consist of promoted ads and Twitter Amplify, Follower Ads, and Twitter takeover. In addition, the company offers monetization products for creators, including Tips to directly send small one-time payments on Twitter using various payment methods, including bitcoin; Super Follows, a paid monthly subscription, which includes bonus content, exclusive previews, and perks as a way to support and connect with creators on Twitter; and Ticketed Spaces to support creators on Twitter for their time and effort in hosting, speaking, and moderating the public conversation on Twitter Spaces. Further, it offers products for developers and data partners comprising Twitter Developer Platform, a platform that enables developers to build tools for people and businesses using its public application programming interface; and paid access to Twitter data for partners with commercial use cases. Twitter, Inc. was founded in 2006 and is based in San Francisco, California.",
-    "exchange": "NYQ",
-    "country": "United States",
-    "numberOfEmployees": 7500
-  },
-  {
-    "ticker": "SPCE",
-    "company": "Virgin Galactic Holdings, Inc.",
-    "amount": 0,
-    "field": "Industrials",
-    "longSummary": "Virgin Galactic Holdings, Inc. focuses on the development, manufacture, and operation of spaceships and related technologies for conducting commercial human spaceflight and flying commercial research and development payloads into space. It is also involved in the ground and flight testing, and post-flight maintenance of its spaceflight system vehicles. The company serves private individuals, researchers, and government agencies. Virgin Galactic Holdings, Inc. was founded in 2017 is headquartered in Las Cruces, New Mexico. Virgin Galactic Holdings, Inc. was a former subsidiary of Virgin Orbit Holdings, Inc.",
-    "exchange": "NYQ",
-    "country": "United States",
-    "numberOfEmployees": 804
-  },
-  {
     "ticker": "FB",
     "company": "Meta Platforms, Inc.",
     "amount": 0,
@@ -78,25 +8,5 @@
     "exchange": "NMS",
     "country": "United States",
     "numberOfEmployees": 77805
-  },
-  {
-    "ticker": "AAPL",
-    "company": "Apple Inc.",
-    "amount": 94.0,
-    "field": "Technology",
-    "longSummary": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. In addition, the company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; AirPods Max, an over-ear wireless headphone; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, HomePod, and iPod touch. Further, it provides AppleCare support services; cloud services store services; and operates various platforms, including the App Store that allow customers to discover and download applications and digital content, such as books, music, video, games, and podcasts. Additionally, the company offers various services, such as Apple Arcade, a game subscription service; Apple Music, which offers users a curated listening experience with on-demand radio stations; Apple News+, a subscription news and magazine service; Apple TV+, which offers exclusive original content; Apple Card, a co-branded credit card; and Apple Pay, a cashless payment service, as well as licenses its intellectual property. The company serves consumers, and small and mid-sized businesses; and the education, enterprise, and government markets. It distributes third-party applications for its products through the App Store. The company also sells its products through its retail and online stores, and direct sales force; and third-party cellular network carriers, wholesalers, retailers, and resellers. Apple Inc. was incorporated in 1977 and is headquartered in Cupertino, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 154000
-  },
-  {
-    "ticker": "INTC",
-    "company": "Intel Corporation",
-    "amount": 0,
-    "field": "Technology",
-    "longSummary": "Intel Corporation engages in the design, manufacture, and sale of computer products and technologies worldwide. The company operates through CCG, DCG, IOTG, Mobileye, NSG, PSG, and All Other segments. It offers platform products, such as central processing units and chipsets, and system-on-chip and multichip packages; and non-platform or adjacent products, including accelerators, boards and systems, connectivity products, graphics, and memory and storage products. The company also provides high-performance compute solutions for targeted verticals and embedded applications for retail, industrial, and healthcare markets; and solutions for assisted and autonomous driving comprising compute platforms, computer vision and machine learning-based sensing, mapping and localization, driving policy, and active sensors. In addition, it offers workload-optimized platforms and related products for cloud service providers, enterprise and government, and communications service providers. The company serves original equipment manufacturers, original design manufacturers, and cloud service providers. Intel Corporation has a strategic partnership with MILA to develop and apply advances in artificial intelligence methods for enhancing the search in the space of drugs. The company was incorporated in 1968 and is headquartered in Santa Clara, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 122900
   }
 ]

@@ -4,8 +4,8 @@ from my_finance.stockk.stock_repo import StockRepository
 from my_finance.stockk.stock_factory import StockFactory
 from my_finance.models import StockModel
 from my_finance.configuration.config import Configuration
-from my_finance.database.stock_file_persistance import StockFilePersistance
-from my_finance.database.stock_sql_persistance import StockSqlPersistance
+from my_finance.database.stock_file_persistence import StockFilePersistance
+from my_finance.database.stock_sql_persistence import StockSqlPersistance
 
 app = Flask(__name__)
 
@@ -13,10 +13,10 @@ conf = Configuration()
 print(conf.get_db_type())
 if conf.get_db_type() == "file":
     print("file x 2")
-    persistance = StockFilePersistance(conf.get_db_path())
+    persistence = StockFilePersistance(conf.get_db_path())
 if conf.get_db_type() == "sql":
-    persistance = StockSqlPersistance(conf.get_db_path())
-StockRepository.persistance = persistance
+    persistence = StockSqlPersistance(conf.get_db_path())
+StockRepository.persistence = persistence
 stock_repo = StockRepository()
 stock_repo.load()
 
@@ -48,4 +48,6 @@ def create():
 
     if request.method == "GET":
         return render_template("add_new_stock.html")
+
+
 

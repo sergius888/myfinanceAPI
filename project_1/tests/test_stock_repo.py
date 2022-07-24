@@ -12,7 +12,7 @@ class StockRepoTest(unittest.TestCase):
         # set up
         self.persistance_mock = Mock()
         # persistance_mock.add()
-        StockRepository.persistance = self.persistance_mock
+        StockRepository.persistence = self.persistance_mock
 
     def tearDown(self) -> None:
         # cleanup/teardown

@@ -20,12 +20,13 @@ def create_and_save_to_file(model: DiagramModel):
     )
     figure, axis = pyplot.subplots(figsize=(16, 9))
     for key in dataframe[model.info]:
+        print(dataframe[model.info])
         axis.plot(dataframe[model.info].index, dataframe[model.info][key])
     pyplot.title(f"{'-'.join(model.tickers)} stock price evolution")
     pyplot.xlabel("Date")
     pyplot.ylabel("Price")
     axis.legend(dataframe[model.info].columns.values)
-    pyplot.savefig(f"./stock/diagram/diagram_nr_{random.randrange(1000, 9999)}")
+    pyplot.savefig(f"./my_finance/stockk/diagram/diagram_nr_{random.randrange(1000, 9999)}")
 
 
 def __get_the_data_frame(interval, ticker_id):

@@ -1,6 +1,6 @@
 import sqlite3
 
-from my_finance.stockk.persistance_interface import StockPersistanceInterface
+from my_finance.stockk.persistence_interface import StockPersistanceInterface
 
 
 class StockSqlPersistance(StockPersistanceInterface):
