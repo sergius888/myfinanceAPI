@@ -43,6 +43,17 @@ class StockFilePersistance(StockPersistanceInterface):
                 x["amount"] += amount
         self.__save(items)
 
+    def updt(self, stock_id: str, transaction_dictionary: dict):
+        items = self.get_all()
+        print("updt method opened file")
+        for dict in items:
+            if stock_id in dict.values(): # TODO prevent TICKER from description - change to index of ticker
+                for key in dict:
+                    if len(key["transactions"]) > 0:
+                        dict["transactions"].append(transaction_dictionary)
+                        break
+
+
 
 
     # def update_db(self, amount: float):
