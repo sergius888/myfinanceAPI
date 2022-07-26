@@ -69,8 +69,7 @@ def update_prices():
     for a_ticker in tickers:
         yf_ticker = yfinance.Ticker(a_ticker)
         price = yf_ticker.info["currentPrice"]
-        y_price = yf_ticker.info["previousClose"]
-        stock_repo.stocks[a_ticker].set_price(price, y_price)
+        stock_repo.stocks[a_ticker].set_price(price)
 
 
 @app.exception_handler(StockNotFound)

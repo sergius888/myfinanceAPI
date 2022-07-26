@@ -6,6 +6,7 @@ class Stock:
         company_name: str,
         field: str,
         country: str,
+        position: str,
         number_of_employees: int,
         amount: float = 0,
         shares_value: float = 0,
@@ -21,6 +22,7 @@ class Stock:
         self.price = -1
         self.shares_value = shares_value
         self.transactions = transactions
+        self.position = position
 
     def set_long_summary(self, summary: str):
         self.long_summary = summary
@@ -38,3 +40,7 @@ class Stock:
 
     def set_transactions(self, trans: dict):
         self.transactions.append(trans)
+
+
+
+

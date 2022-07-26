@@ -1,5 +1,12 @@
 from my_finance.stockk.stock import Stock
 from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded
+from datetime import datetime
+
+
+
+# Current datetime (used for transactions)
+now = datetime.now()
+date_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 
 class StockRepository:
@@ -82,8 +89,18 @@ class StockRepository:
 
 
     @staticmethod
-    def add_transactions():
-        pass
+    def add_transactions(position: Stock, num_of_shares: Stock):
+        transactions_info = {
+            "position": position.position,
+            "num_of_shares": num_of_shares.amount,
+            "at_price": 0,
+            "transaction_date": date_string
+        }
+        val_of_shares = 0
+
+
+
+
 
 
 
@@ -221,20 +238,20 @@ list_new = [
     "numberOfEmployees": 77805,
     "transactions": [
         {
-            "position": "BUY",
-            "num_of_shares": 30.0,
-            "at_price": 190,
-            "transaction_date": "09-06-2022"
+        "position": "BUY",
+        "num_of_shares": 30.0,
+        "at_price": 190,
+        "transaction_date": "09-06-2022"
 
         },
         {
-            "position": "SELL",
-            "num_of_shares": 25.0,
-            "at_price": 220,
-            "transaction_date": "01-07-2022"
+        "position": "SELL",
+        "num_of_shares": 25.0,
+        "at_price": 220,
+        "transaction_date": "01-07-2022"
         }
-    ]
-  }
+        ]
+      }
 ]
 print("here starts")
 print(list_new)
@@ -244,9 +261,11 @@ for dict in list_new:
     if dict["ticker"] == "FB":
         print("it is FB")
         if not len(dict["transactions"]) > 0:
+            print("apparently it works")
             dict["transactions"].append(dicky)
         else:
             for key in dict["transactions"]:
+                print("now this condition works")
 
                 if len(dict["transactions"])>0:
                     dict["transactions"].append(dicky)
