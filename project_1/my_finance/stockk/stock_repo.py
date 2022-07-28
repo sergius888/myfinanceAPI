@@ -81,13 +81,6 @@ class StockRepository:
             StockRepository.stocks[one_item["ticker"]] = new_stock
 
 
-    # @staticmethod
-    # def edit_amount(ticker_id: str, amnt: float):
-    #     if ticker_id in StockRepository.stocks.keys():
-    #         StockRepository.persistence.update(ticker_id, amnt)
-    #     else:
-    #         raise StockNotFound()
-
 
     @staticmethod
     def add_transactions(ticker: str, position: str, num_of_shares: float):
@@ -121,16 +114,17 @@ class StockRepository:
         else:
             return "You should choose between buy or sell."
 
-
         if ticker in StockRepository.stocks.keys():
             StockRepository.persistence.updt(ticker, transactions_info, val_of_shares, amount)
         else:
             raise StockNotFound()
 
+'''
+TODO add method for portfolio 
 
-
-
-
+idea - add method to refresh all sharevalues from database
+call method everytime server starts. 
+'''
 
 
 """

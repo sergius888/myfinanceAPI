@@ -57,4 +57,6 @@ class StockFilePersistance(StockPersistanceInterface):
                 # solution found is to check if last transaction is a "SELL" and the amount resulted is 0.
                 if dict["amount"] <= 0 and len(dict["transactions"]) > 0:
                     dict["transactions"].clear()
+                    dict["amount"] = 0
+                    dict["sharesValue"] = 0
         self.__save(items)
