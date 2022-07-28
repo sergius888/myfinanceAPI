@@ -1,12 +1,11 @@
+import yfinance as yf
 from my_finance.stockk.stock import Stock
 from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded
 from datetime import datetime
 
 
 
-# Current datetime (used for transactions)
-now = datetime.now()
-date_string = now.strftime("%d/%m/%Y %H:%M:%S")
+
 
 
 class StockRepository:
@@ -26,6 +25,8 @@ class StockRepository:
             "exchange": new_stock.exchange,
             "country": new_stock.country,
             "numberOfEmployees": new_stock.number_of_employees,
+            "sharesValue": new_stock.shares_value,
+            "transactions": new_stock.transactions
         }
         if new_stock.ticker not in StockRepository.stocks:
             try:
@@ -80,23 +81,51 @@ class StockRepository:
             StockRepository.stocks[one_item["ticker"]] = new_stock
 
 
+    # @staticmethod
+    # def edit_amount(ticker_id: str, amnt: float):
+    #     if ticker_id in StockRepository.stocks.keys():
+    #         StockRepository.persistence.update(ticker_id, amnt)
+    #     else:
+    #         raise StockNotFound()
+
+
     @staticmethod
-    def edit_amount(ticker_id: str, amnt: float):
-        if ticker_id in StockRepository.stocks.keys():
-            StockRepository.persistence.update(ticker_id, amnt)
-        else:
+    def add_transactions(ticker: str, position: str, num_of_shares: float):
+
+        if ticker not in StockRepository.stocks.keys():
             raise StockNotFound()
+        else:
+            yf_ticker = yf.Ticker(ticker)
+            price = yf_ticker.info["currentPrice"]
+            # Current datetime (used for transactions)
+            now = datetime.now()
+            date_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
-
-    @staticmethod
-    def add_transactions(position: Stock, num_of_shares: Stock):
         transactions_info = {
-            "position": position.position,
-            "num_of_shares": num_of_shares.amount,
-            "at_price": 0,
+            "position": position,
+            "num_of_shares": num_of_shares,
+            "at_price": price,
             "transaction_date": date_string
         }
-        val_of_shares = 0
+        val_of_shares = 0 # it will increment based on num_of_shares * price at the time of the transaction.
+        amount = 0 # increment everytime new shares are transacted
+        position = position.upper()
+
+        if position == "SELL" and num_of_shares > 0:
+            transactions_info["num_of_shares"] = -abs(num_of_shares)
+
+        if position == "BUY" or position == "SELL":
+            val_of_shares += (transactions_info["num_of_shares"]*transactions_info["at_price"])
+            amount += transactions_info["num_of_shares"]
+
+        else:
+            return "You should choose between buy or sell."
+
+
+        if ticker in StockRepository.stocks.keys():
+            StockRepository.persistence.updt(ticker, transactions_info, val_of_shares, amount)
+        else:
+            raise StockNotFound()
 
 
 
@@ -111,23 +140,25 @@ add test with https://www.youtube.com/watch?v=IBJ6AeObUTg&list=LL&index=3&ab_cha
 
 
 
-list_of = [
-  {
-    "ticker": "FB",
-    "company": "Meta Platforms, Inc.",
-    "amount": 0,
-    "current_value": 0,
-    "transactions": [
 
-    ],
-    "field": "Communication Services",
-    "longSummary": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, wearables, and in-home devices worldwide. It operates in two segments, Family of Apps and Reality Labs. The Family of Apps segment's products include Facebook, which enables people to share, discover, and connect with interests; Instagram, a community for sharing photos, videos, and private messages, as well as feed, stories, reels, video, live, and shops; Messenger, a messaging application for people to connect with friends, family, groups, and businesses across platforms and devices through chat, audio and video calls, and rooms; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact privately. The Reality Labs segment provides augmented and virtual reality related products comprising virtual reality hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. Meta Platforms, Inc. was incorporated in 2004 and is headquartered in Menlo Park, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 77805
-  }
-]
-
+#
+# list_of = [
+#   {
+#     "ticker": "FB",
+#     "company": "Meta Platforms, Inc.",
+#     "amount": 0,
+#     "current_value": 0,
+#     "transactions": [
+#
+#     ],
+#     "field": "Communication Services",
+#     "longSummary": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, wearables, and in-home devices worldwide. It operates in two segments, Family of Apps and Reality Labs. The Family of Apps segment's products include Facebook, which enables people to share, discover, and connect with interests; Instagram, a community for sharing photos, videos, and private messages, as well as feed, stories, reels, video, live, and shops; Messenger, a messaging application for people to connect with friends, family, groups, and businesses across platforms and devices through chat, audio and video calls, and rooms; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact privately. The Reality Labs segment provides augmented and virtual reality related products comprising virtual reality hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. Meta Platforms, Inc. was incorporated in 2004 and is headquartered in Menlo Park, California.",
+#     "exchange": "NMS",
+#     "country": "United States",
+#     "numberOfEmployees": 77805
+#   }
+# ]
+#
 
 # yal = 0
 # xal = 0
@@ -152,131 +183,126 @@ list_of = [
 # for x in list_of:
 #     print(len(x["transactions"]))
 
-
-
-from datetime import datetime
-
-update = "mue"
-
-for _ in range(1):
-    if update == "yes":
-        type_of = str(input("buy or sell "))
-
-        amount_of = float(input("num of shares "))
-
-        price_of = float(input("price "))
-        now = datetime.now()
-        date_of = now.strftime("%d/%m/%Y %H:%M:%S")
-
-        dicsy = {
-            "position": type_of.upper(),
-            "num_of_shares": amount_of,
-            "at_price": price_of,
-            "transaction_date": date_of
-        }
-
-        for u in list_of:
-            if len(u["transactions"]) > 0:
-                for y in u["transactions"]:
-                    print(type(y))
-                    print(y)
-                    print(type(u["transactions"]))
-                    u["transactions"].append(dicsy)
-                    break
-            else:
-                u["transactions"].append(dicsy)
-
-    print(list_of)
-
-    for x in list_of:
-        print(len(x["transactions"]))
-
-
-
-xxx =    [     {
-            "position": "BUY",
-            "num_of_shares": 25.5,
-            "at_price": 200,
-            "transaction_date": "01-06-2022",
-            "asd" : [ {"position": "asd",
-            "num_of_shares": 2.5,
-            "at_price": 20,
-            "transaction_date": "01-06-2022"} ]
-        },
-        {
-            "position": "BUY",
-            "num_of_shares": 30.0,
-            "at_price": 190,
-            "transaction_date": "09-06-2022"
-
-        },
-        {
-            "position": "SELL",
-            "num_of_shares": 25.0,
-            "at_price": 220,
-            "transaction_date": "01-07-2022"
-        }
-]
-
-dicky = {
-            "position": "BUY",
-            "num_of_shares": 25.5,
-            "at_price": 200,
-            "transaction_date": "01-06-2022"
-}
-
-list_new = [
-  {
-    "ticker": "FB",
-    "company": "Meta Platforms, Inc.",
-    "amount": 0,
-    "shares_value": 0,
-    "field": "Communication Services",
-    "longSummary": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, wearables, and in-home devices worldwide. It operates in two segments, Family of Apps and Reality Labs. The Family of Apps segment's products include Facebook, which enables people to share, discover, and connect with interests; Instagram, a community for sharing photos, videos, and private messages, as well as feed, stories, reels, video, live, and shops; Messenger, a messaging application for people to connect with friends, family, groups, and businesses across platforms and devices through chat, audio and video calls, and rooms; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact privately. The Reality Labs segment provides augmented and virtual reality related products comprising virtual reality hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. Meta Platforms, Inc. was incorporated in 2004 and is headquartered in Menlo Park, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 77805,
-    "transactions": [
-        {
-        "position": "BUY",
-        "num_of_shares": 30.0,
-        "at_price": 190,
-        "transaction_date": "09-06-2022"
-
-        },
-        {
-        "position": "SELL",
-        "num_of_shares": 25.0,
-        "at_price": 220,
-        "transaction_date": "01-07-2022"
-        }
-        ]
-      }
-]
-print("here starts")
-print(list_new)
-
-
-for dict in list_new:
-    if dict["ticker"] == "FB":
-        print("it is FB")
-        if not len(dict["transactions"]) > 0:
-            print("apparently it works")
-            dict["transactions"].append(dicky)
-        else:
-            for key in dict["transactions"]:
-                print("now this condition works")
-
-                if len(dict["transactions"])>0:
-                    dict["transactions"].append(dicky)
-                    print(type(dict["transactions"]))
-                    break
-
-
-
-
-print(list_new)
-
-
-        # print(type(y["asd"]))
+#
+# from datetime import datetime
+#
+#
+# update = "mue"
+#
+# for _ in range(1):
+#     if update == "yes":
+#         type_of = str(input("buy or sell "))
+#
+#         amount_of = float(input("num of shares "))
+#
+#         price_of = float(input("price "))
+#         now = datetime.now()
+#         date_of = now.strftime("%d/%m/%Y %H:%M:%S")
+#
+#         dicsy = {
+#             "position": type_of.upper(),
+#             "num_of_shares": amount_of,
+#             "at_price": price_of,
+#             "transaction_date": date_of
+#         }
+#
+#         for u in list_of:
+#             if len(u["transactions"]) > 0:
+#                 for y in u["transactions"]:
+#                     print(type(y))
+#                     print(y)
+#                     print(type(u["transactions"]))
+#                     u["transactions"].append(dicsy)
+#                     break
+#             else:
+#                 u["transactions"].append(dicsy)
+#
+#     print(list_of)
+#
+#     for x in list_of:
+#         print(len(x["transactions"]))
+#
+#
+#
+# xxx =    [     {
+#             "position": "BUY",
+#             "num_of_shares": 25.5,
+#             "at_price": 200,
+#             "transaction_date": "01-06-2022",
+#             "asd" : [ {"position": "asd",
+#             "num_of_shares": 2.5,
+#             "at_price": 20,
+#             "transaction_date": "01-06-2022"} ]
+#         },
+#         {
+#             "position": "BUY",
+#             "num_of_shares": 30.0,
+#             "at_price": 190,
+#             "transaction_date": "09-06-2022"
+#
+#         },
+#         {
+#             "position": "SELL",
+#             "num_of_shares": 25.0,
+#             "at_price": 220,
+#             "transaction_date": "01-07-2022"
+#         }
+# ]
+#
+# dicky = {
+#             "position": "BUY",
+#             "num_of_shares": 25.5,
+#             "at_price": 200,
+#             "transaction_date": "01-06-2022"
+# }
+#
+# list_new = [
+#   {
+#     "ticker": "FB",
+#     "company": "Meta Platforms, Inc.",
+#     "amount": 0,
+#     "shares_value": 0,
+#     "field": "Communication Services",
+#     "longSummary": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, wearables, and in-home devices worldwide. It operates in two segments, Family of Apps and Reality Labs. The Family of Apps segment's products include Facebook, which enables people to share, discover, and connect with interests; Instagram, a community for sharing photos, videos, and private messages, as well as feed, stories, reels, video, live, and shops; Messenger, a messaging application for people to connect with friends, family, groups, and businesses across platforms and devices through chat, audio and video calls, and rooms; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact privately. The Reality Labs segment provides augmented and virtual reality related products comprising virtual reality hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. Meta Platforms, Inc. was incorporated in 2004 and is headquartered in Menlo Park, California.",
+#     "exchange": "NMS",
+#     "country": "United States",
+#     "numberOfEmployees": 77805,
+#     "transactions": [
+#         {
+#         "position": "BUY",
+#         "num_of_shares": 30.0,
+#         "at_price": 190,
+#         "transaction_date": "09-06-2022"
+#
+#         },
+#         {
+#         "position": "SELL",
+#         "num_of_shares": 25.0,
+#         "at_price": 220,
+#         "transaction_date": "01-07-2022"
+#         }
+#         ]
+#       }
+# ]
+# print("here starts")
+# print(list_new)
+#
+#
+# for dict in list_new:
+#     if dict["ticker"] == "FB":
+#         print("it is FB")
+#         if not len(dict["transactions"]) > 0:
+#             print("apparently it works")
+#             dict["transactions"].append(dicky)
+#         else:
+#             for key in dict["transactions"]:
+#                 print("now this condition works")
+#
+#                 if len(dict["transactions"])>0:
+#                     dict["transactions"].append(dicky)
+#                     print(type(dict["transactions"]))
+#                     break
+#
+#
+#
 

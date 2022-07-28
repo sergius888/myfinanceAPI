@@ -53,10 +53,14 @@ def remove_stock(ticker_id: str):
     stocks_repo.remove(ticker_id.upper())
 
 
-@stocks_router.put("")
-def add_or_remove_shares(ticker_id: str, shares: float):
-    stocks_repo.edit_amount(ticker_id.upper(), shares)
+# @stocks_router.put("")
+# def add_or_remove_shares(ticker_id: str, shares: float):
+#     stocks_repo.edit_amount(ticker_id.upper(), shares)
 
+
+@stocks_router.put("")
+def add_transaction(ticker_id: str, position: str, shares: float):
+    stocks_repo.add_transactions(ticker_id, position, shares)
 
 '''
         TODO

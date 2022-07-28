@@ -10,10 +10,10 @@ class StockModel(BaseModel):
         default="", description="The full company name, leave empty for POST"
     )
     field: str = Field(default="")
-    yesterday_price: float = Field(default=-1, description="Last close day price")
     price: float = Field(default=-1, description="Current price updated in real time")
     amount: float = Field(default=0, description="The amount of shares you own")
     shares_value: float = Field(default=0, description="The value of the shares you own")
+    transactions: list = Field(description="List of transactions with datetime.")
 
     class Config:
         orm_mode = True
@@ -26,7 +26,7 @@ class StockExtendedModel(StockModel):
     )
     country: str = Field(description="The country of company's headquarter")
     number_of_employees: str = Field(description="Number of employees")
-    transactions: list = Field(description="List of transactions with datetime.")
+
 
 
 class DiagramModel(BaseModel):
