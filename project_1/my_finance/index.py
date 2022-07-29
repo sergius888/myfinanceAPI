@@ -51,16 +51,30 @@ logging.info("Starting the finance app ...")
 @app.on_event("startup")
 def load_list_of_items():
     logging.info("Loading stocks from database ...")
+    print("FIRST LOGG INFO")
     stock_repo.load()
+    print("FIRST LOAD INFO")
     logging.info("Successfully loaded stocks from database.")
-
+    print("Last log event")
+    if stock_repo.stocks:
+        tickers = stock_repo.stocks.keys()
+        print(tickers)
+        logging.info("P/L updating in database ...")
+        for a_ticker in tickers:
+            print("it checks for P/L")
+            print(a_ticker)
+            yf_ticker = yfinance.Ticker(a_ticker)
+            price = yf_ticker.info["currentPrice"]
+            print(price)
+            persistence.update_profit_loss(a_ticker, price)
+            print("Should work by now ")
 
 @app.on_event("startup")
-@repeat_every(seconds=5 * 10, wait_first=True)  # every 5 seconds we run this function
+@repeat_every(seconds=5 * 30, wait_first=True)  # every 5 seconds we run this function
 def update_prices():
     # get all stocks
     # get price (yfinance)
-    # stockk set price
+    # stock set price
     if not stock_repo.stocks:
         logging.warning("Stocks not loaded yet!")
         return
@@ -91,6 +105,9 @@ def stock_already_added(exception, request):
     return JSONResponse(
         content="The stock code requested is not valid. Please check again!", status_code=500
     )
+
+
+
 
 
 # def get_current_price(symbol):

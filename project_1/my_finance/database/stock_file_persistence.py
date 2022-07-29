@@ -35,28 +35,34 @@ class StockFilePersistance(StockPersistanceInterface):
     # this method adds new transactions as a dict in a list of dicts, if conditions are checked
     # and it deletes everything if the amount of share owned is 0 and the last transaction is a SELL.
     def updt(self, stock_id: str, transaction_dictionary: dict, shares_val: float, amount: float):
-
         items = self.get_all()
         for dict in items:
             if dict["ticker"] == stock_id:
-                dict["sharesValue"] += shares_val
+                dict["sharesCost"] += shares_val
                 dict["amount"] += amount
-
                 # below: add new transaction(as a dict) in transactions list
                 if not len(dict["transactions"]) > 0:
                     dict["transactions"].append(transaction_dictionary)
                     # if the list contains 0 elements
-
                 else:
                     for key in dict["transactions"]:
                         dict["transactions"].append(transaction_dictionary)
                         # iterate and add transaction if there is at least one already
                         break
-
                 # below: if user sells all shares, it should clear the transactions list.
-                # solution found is to check if last transaction is a "SELL" and the amount resulted is 0.
+                # solution found is to check if the amount resulted is 0 but transaction list contains items.
                 if dict["amount"] <= 0 and len(dict["transactions"]) > 0:
                     dict["transactions"].clear()
                     dict["amount"] = 0
-                    dict["sharesValue"] = 0
+                    dict["sharesCost"] = 0
         self.__save(items)
+
+    def update_profit_loss(self, ticker: str, price: float):
+        items = self.get_all()
+        for dict in items:
+            if dict["ticker"] == ticker:
+                if dict["amount"] > 0:
+                    dict["P/L"] = (dict["amount"] * price) - dict["sharesCost"]
+        self.__save(items)
+
+

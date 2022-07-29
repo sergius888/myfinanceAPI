@@ -7,7 +7,8 @@ class Stock:
         country: str,
         number_of_employees: int,
         amount: float = 0,
-        shares_value: float = 0,
+        shares_cost: float = 0,
+        profit_and_loss: float = 0,
         transactions=None
     ):
         if transactions is None:
@@ -21,7 +22,8 @@ class Stock:
         self.country = country
         self.number_of_employees = number_of_employees
         self.price = -1
-        self.shares_value = shares_value
+        self.shares_cost = shares_cost
+        self.profit_and_loss = profit_and_loss
         self.transactions = transactions
 
 
@@ -35,6 +37,9 @@ class Stock:
         print(value)
         self.price = value
 
+    def set_p_and_l(self):
+        self.profit_and_loss = self.price - self.shares_cost
+        print(self.profit_and_loss)
 
 
 

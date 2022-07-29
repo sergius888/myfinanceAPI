@@ -2,13 +2,78 @@
   {
     "ticker": "PATH",
     "company": "UiPath Inc.",
-    "amount": 0,
+    "amount": 10.0,
     "field": "Technology",
     "longSummary": "UiPath Inc. provides an end-to-end automation platform that offers a range of robotic process automation (RPA) solutions primarily in the United States, Romania, and Japan. The company offers a suite of interrelated software to build, manage, run, engage, measure, and govern automation within the organization. Its platform combines artificial intelligence with desktop recording, back-end mining of both human activity and system logs, and intuitive visualization tools, which enables users to discover, analyze, and identify processes to automate in a centralized portal; offers low-code development environments that allows users in an organization to create attended and unattended automations without any prior knowledge of coding; deploys robots in highly immersive attended experiences or in standalone, unattended modes behind the scenes, and can leverage native connectors built for commonly used line-of-business applications; offers centralized tools designed to manage, test, and deploy automations and ML models across the enterprise; allows customers to manage long running processes that orchestrate work between robots and humans; and enable users to track, measure, and forecast the performance of automation in their enterprise and help businesses ensure compliance with business standards. In addition, the company provides maintenance and support for its software, as well as professional services, such as training and implementation services to facilitate the adoption of its platform. It serves banking, healthcare, financial services, and government entities. UiPath Inc. was founded in 2005 and is headquartered in New York, New York.",
     "exchange": "NYQ",
     "country": "United States",
     "numberOfEmployees": 4013,
-    "sharesValue": 0,
+    "sharesCost": 181.45000000000002,
+    "P/L": -0.6500000000000341,
+    "transactions": [
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 18.145,
+        "transaction_date": "29/07/2022 18:25:00"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 5.0,
+        "at_price": 18.15,
+        "transaction_date": "29/07/2022 18:25:18"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 5.0,
+        "at_price": 18.17,
+        "transaction_date": "29/07/2022 18:25:28"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 18.16,
+        "transaction_date": "29/07/2022 18:28:07"
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "amount": 0,
+    "field": "Technology",
+    "longSummary": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. In addition, the company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; AirPods Max, an over-ear wireless headphone; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, HomePod, and iPod touch. Further, it provides AppleCare support services; cloud services store services; and operates various platforms, including the App Store that allow customers to discover and download applications and digital content, such as books, music, video, games, and podcasts. Additionally, the company offers various services, such as Apple Arcade, a game subscription service; Apple Music, which offers users a curated listening experience with on-demand radio stations; Apple News+, a subscription news and magazine service; Apple TV+, which offers exclusive original content; Apple Card, a co-branded credit card; and Apple Pay, a cashless payment service, as well as licenses its intellectual property. The company serves consumers, and small and mid-sized businesses; and the education, enterprise, and government markets. It distributes third-party applications for its products through the App Store. The company also sells its products through its retail and online stores, and direct sales force; and third-party cellular network carriers, wholesalers, retailers, and resellers. Apple Inc. was incorporated in 1977 and is headquartered in Cupertino, California.",
+    "exchange": "NMS",
+    "country": "United States",
+    "numberOfEmployees": 154000,
+    "sharesCost": 0,
+    "P/L": 0,
     "transactions": []
+  },
+  {
+    "ticker": "FB",
+    "company": "Meta Platforms, Inc.",
+    "amount": 10.0,
+    "field": "Communication Services",
+    "longSummary": "Meta Platforms, Inc. develops products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality headsets, wearables, and in-home devices worldwide. It operates in two segments, Family of Apps and Reality Labs. The Family of Apps segment's products include Facebook, which enables people to share, discover, and connect with interests; Instagram, a community for sharing photos, videos, and private messages, as well as feed, stories, reels, video, live, and shops; Messenger, a messaging application for people to connect with friends, family, groups, and businesses across platforms and devices through chat, audio and video calls, and rooms; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact privately. The Reality Labs segment provides augmented and virtual reality related products comprising virtual reality hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. Meta Platforms, Inc. was incorporated in 2004 and is headquartered in Menlo Park, California.",
+    "exchange": "NMS",
+    "country": "United States",
+    "numberOfEmployees": 71970,
+    "sharesCost": 1565.3000000000002,
+    "P/L": -5.300000000000182,
+    "transactions": [
+      {
+        "position": "BUY",
+        "num_of_shares": 20.0,
+        "at_price": 156.27,
+        "transaction_date": "29/07/2022 18:26:10"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 156.01,
+        "transaction_date": "29/07/2022 18:28:20"
+      }
+    ]
   }
 ]

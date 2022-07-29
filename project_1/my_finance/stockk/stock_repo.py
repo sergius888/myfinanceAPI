@@ -1,9 +1,8 @@
 import yfinance as yf
-from my_finance.stockk.stock import Stock
-from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded
 from datetime import datetime
 
-
+from my_finance.stockk.stock import Stock
+from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded
 
 
 
@@ -25,8 +24,10 @@ class StockRepository:
             "exchange": new_stock.exchange,
             "country": new_stock.country,
             "numberOfEmployees": new_stock.number_of_employees,
-            "sharesValue": new_stock.shares_value,
+            "sharesCost": new_stock.shares_cost,
+            "P/L": new_stock.profit_and_loss,
             "transactions": new_stock.transactions
+
         }
         if new_stock.ticker not in StockRepository.stocks:
             try:
@@ -118,6 +119,9 @@ class StockRepository:
             StockRepository.persistence.updt(ticker, transactions_info, val_of_shares, amount)
         else:
             raise StockNotFound()
+
+
+
 
 '''
 TODO add method for portfolio 

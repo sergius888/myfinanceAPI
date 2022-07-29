@@ -62,28 +62,3 @@ def remove_stock(ticker_id: str):
 def add_transaction(ticker_id: str, position: str, shares: float):
     stocks_repo.add_transactions(ticker_id, position, shares)
 
-'''
-        TODO
-        1. Create nested dict that contain:
-            
-            ...
-            
-            "amount": "20",
-            "current_value": " 5*at_price + (-3*at_price) ... "
-            "historical_trans":
-            [
-                {
-                "shares": "5",
-                "at_price": ""
-                "at_Date": "date"  
-                }
-                {
-                "shares": "-7",  -- prevent this ##
-                "at_price": ""
-                "at_Date": "date"  
-                }
-            ]
-        
-        
-
-'''
