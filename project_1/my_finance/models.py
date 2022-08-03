@@ -14,7 +14,7 @@ class StockModel(BaseModel):
     amount: float = Field(default=0, description="The amount of shares you own")
     shares_cost: float = Field(default=0, description="The value of the shares you own")
     profit_loss: float = Field(default=0, description="Current p/l updated in real time")
-    transactions: list = Field(description="List of transactions with datetime.")
+    transactions: list = Field(default=[], description="List of transactions with datetime.")
 
     class Config:
         orm_mode = True

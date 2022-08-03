@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 conf = Configuration()
 print(conf.get_db_type())
+
 if conf.get_db_type() == "file":
     print("file x 2")
     persistence = StockFilePersistance(conf.get_db_path())
@@ -50,4 +51,7 @@ def create():
         return render_template("add_new_stock.html")
 
 
+'''
+TODO add update PL button (instead of restarting with when server starts)
 
+'''

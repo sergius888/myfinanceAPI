@@ -55,14 +55,23 @@ class StockFilePersistance(StockPersistanceInterface):
                     dict["transactions"].clear()
                     dict["amount"] = 0
                     dict["sharesCost"] = 0
+                    dict["Potential P/L"] = 0
         self.__save(items)
 
-    def update_profit_loss(self, ticker: str, price: float):
+    def update_profit_loss(self, ticker: str, price: float, time: str):
         items = self.get_all()
         for dict in items:
-            if dict["ticker"] == ticker:
-                if dict["amount"] > 0:
-                    dict["P/L"] = (dict["amount"] * price) - dict["sharesCost"]
+            if dict["amount"] > 0:
+                if dict["ticker"] == ticker:
+                    dict["Potential P/L"] = (dict["amount"] * price) - dict["sharesCost"]
+                    dict["Potential P/L"] = f'{dict["Potential P/L"]} as of {time}'
         self.__save(items)
+
+
+
+
+"Potential P/L"
+
+
 
 

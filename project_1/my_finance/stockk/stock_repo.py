@@ -5,7 +5,8 @@ from my_finance.stockk.stock import Stock
 from my_finance.exceptions import StockNotFound, CannotAddStock, StockAlreadyAdded
 
 
-
+now = datetime.now()
+date_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 class StockRepository:
     stocks = {}
@@ -25,7 +26,7 @@ class StockRepository:
             "country": new_stock.country,
             "numberOfEmployees": new_stock.number_of_employees,
             "sharesCost": new_stock.shares_cost,
-            "P/L": new_stock.profit_and_loss,
+            "Potential P/L": new_stock.profit_and_loss,
             "transactions": new_stock.transactions
 
         }
@@ -75,6 +76,8 @@ class StockRepository:
                 one_item["country"],
                 one_item["numberOfEmployees"],
                 one_item["amount"],
+                one_item["Potential P/L"],
+                one_item["sharesCost"],
             )
             if "longSummary" in one_item and "exchange" in one_item:
                 new_stock.set_long_summary(one_item["longSummary"])
@@ -91,9 +94,10 @@ class StockRepository:
         else:
             yf_ticker = yf.Ticker(ticker)
             price = yf_ticker.info["currentPrice"]
+            price = round(price, 2)
             # Current datetime (used for transactions)
-            now = datetime.now()
-            date_string = now.strftime("%d/%m/%Y %H:%M:%S")
+            # now = datetime.now()
+            # date_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
         transactions_info = {
             "position": position,
@@ -109,6 +113,7 @@ class StockRepository:
             transactions_info["num_of_shares"] = -abs(num_of_shares)
 
         if position == "BUY" or position == "SELL":
+            val_of_shares = round(val_of_shares, 2)
             val_of_shares += (transactions_info["num_of_shares"]*transactions_info["at_price"])
             amount += transactions_info["num_of_shares"]
 
@@ -123,19 +128,13 @@ class StockRepository:
 
 
 
+
 '''
 TODO add method for portfolio 
 
 idea - add method to refresh all sharevalues from database
 call method everytime server starts. 
 '''
-
-
-"""
-add test with https://www.youtube.com/watch?v=IBJ6AeObUTg&list=LL&index=3&ab_channel=JJMusic
-"""
-
-
 
 
 
