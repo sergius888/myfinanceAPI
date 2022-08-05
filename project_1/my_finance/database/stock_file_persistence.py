@@ -16,6 +16,7 @@ class StockFilePersistance(StockPersistanceInterface):
         items = json.loads(json_items)
         return items
 
+
     def add(self, stock_info: dict):
         items = self.get_all()
         items.append(stock_info)
@@ -64,7 +65,8 @@ class StockFilePersistance(StockPersistanceInterface):
             if dict["amount"] > 0:
                 if dict["ticker"] == ticker:
                     dict["Potential P/L"] = (dict["amount"] * price) - dict["sharesCost"]
-                    dict["Potential P/L"] = f'{dict["Potential P/L"]} as of {time}'
+                    dict["Potential P/L"] = round(dict["Potential P/L"], 2)
+                    dict["Potential P/L"] = f'{dict["Potential P/L"]} $ \nas of {time}'
         self.__save(items)
 
 

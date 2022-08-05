@@ -9,7 +9,7 @@
     "country": "United States",
     "numberOfEmployees": 4013,
     "sharesCost": 412.8,
-    "Potential P/L": "0.0 as of 03/08/2022 19:00:14",
+    "Potential P/L": "12.999999999999943$ \nas of 05/08/2022 14:54:13",
     "transactions": [
       {
         "position": "BUY",
@@ -29,7 +29,7 @@
     "country": "United States",
     "numberOfEmployees": 154000,
     "sharesCost": 4118.0,
-    "Potential P/L": "0.5 as of 03/08/2022 19:00:14",
+    "Potential P/L": "27.25$ \nas of 05/08/2022 14:54:13",
     "transactions": [
       {
         "position": "BUY",
@@ -61,7 +61,7 @@
     "country": "United States",
     "numberOfEmployees": 71970,
     "sharesCost": 2533.8,
-    "Potential P/L": "-1.349999999999909 as of 03/08/2022 19:00:14",
+    "Potential P/L": "24.749999999999545$ \nas of 05/08/2022 14:54:13",
     "transactions": [
       {
         "position": "BUY",
@@ -87,7 +87,7 @@
     "country": "United States",
     "numberOfEmployees": 7500,
     "sharesCost": 821.0,
-    "Potential P/L": "0.0 as of 03/08/2022 19:00:14",
+    "Potential P/L": "0.20000000000004547$ \nas of 05/08/2022 14:54:13",
     "transactions": [
       {
         "position": "BUY",
@@ -132,8 +132,8 @@
     "exchange": "NYQ",
     "country": "United States",
     "numberOfEmployees": 3057,
-    "sharesCost": 168.45000000000002,
-    "Potential P/L": "0.29999999999998295 as of 03/08/2022 19:00:14",
+    "sharesCost": 168.45,
+    "Potential P/L": "1.3500000000000227$ \nas of 05/08/2022 14:54:13",
     "transactions": [
       {
         "position": "BUY",

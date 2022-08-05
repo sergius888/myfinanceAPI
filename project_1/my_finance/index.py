@@ -57,16 +57,16 @@ def load_list_of_items():
     print("FIRST LOAD INFO")
     logging.info("Successfully loaded stocks from database.")
     print("Last log event")
-    # if stock_repo.stocks:
-    #     tickers = stock_repo.stocks.keys()
-    #     logging.info("Potential P/L updating in database ...")
-    #     for a_ticker in tickers:
-    #         print(f'Updating P/L for {a_ticker}')
-    #         yf_ticker = yfinance.Ticker(a_ticker)
-    #         price = yf_ticker.info["currentPrice"]
-    #         price = round(price, 2)
-    #         time = my_finance.stockk.stock_repo.date_string
-    #         persistence.update_profit_loss(a_ticker, price, time)
+    if stock_repo.stocks:
+        tickers = stock_repo.stocks.keys()
+        logging.info("Potential P/L updating in database ...")
+        for a_ticker in tickers:
+            print(f'Updating P/L for {a_ticker}')
+            yf_ticker = yfinance.Ticker(a_ticker)
+            price = yf_ticker.info["currentPrice"]
+            price = round(price, 2)
+            time = my_finance.stockk.stock_repo.date_string
+            persistence.update_profit_loss(a_ticker, price, time)
 
 @app.on_event("startup")
 @repeat_every(seconds=5 * 30, wait_first=True)  # every 5 seconds we run this function

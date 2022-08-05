@@ -12,8 +12,9 @@
             <th align="center">Ticker</th>
             <th align="center">Company</th>
             <th align="center">Country</th>
-            <th align="center">Amount</th>
-            <th align="center">P&L</th>
+            <th align="center">Amount of shares</th>
+            <th align="center">Shares Cost</th>
+            <th align="center">Potential P&L</th>
             <th align="center"></th>
         </tr>
         {% for x in stocks %}
@@ -23,6 +24,7 @@
                 <td align="center">{{ x.country }}</td>
                 <td align="center">{{ x.amount }}</td>
                 <th align="center">{{x.profit_and_loss}}</th>
+                <th align="center">{{x.shares_cost}}</th>
                 <td align="center">
                     <form action="{{ url_for('delete', ticker=x.ticker) }}" method="post">
                         <input class="danger" type="submit" value="Delete">
