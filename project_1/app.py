@@ -29,9 +29,30 @@ def hello():
     return render_template("stocks.html", stocks=stocks)
 
 
+
 @app.route("/stocks/<ticker>/delete", methods=["POST"])
 def delete(ticker):
     stock_repo.remove(ticker)
+    return redirect(url_for("hello"))
+
+
+@app.route("/stocks/<ticker>/update", methods=["POST"])
+def update_amount(ticker):
+    # u = request.args.get('')
+
+    if request.form["submit_button"] == "Buy":
+        print("it checks")
+        position = "BUY"
+    else:
+        print("works with sell")
+        position = "SELL"
+
+    number = request.form['txt']
+    print(number)
+    num_of_shares = float(number)
+
+
+    stock_repo.add_transactions(ticker, position, num_of_shares)
     return redirect(url_for("hello"))
 
 
@@ -49,6 +70,9 @@ def create():
 
     if request.method == "GET":
         return render_template("add_new_stock.html")
+
+
+
 
 
 '''

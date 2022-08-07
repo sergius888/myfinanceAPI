@@ -65,8 +65,8 @@ class StockFilePersistance(StockPersistanceInterface):
             if dict["amount"] > 0:
                 if dict["ticker"] == ticker:
                     dict["Potential P/L"] = (dict["amount"] * price) - dict["sharesCost"]
-                    dict["Potential P/L"] = round(dict["Potential P/L"], 2)
-                    dict["Potential P/L"] = f'{dict["Potential P/L"]} $ \nas of {time}'
+                    x = round(dict["Potential P/L"], 2)
+                    dict["Potential P/L"] = f'{x} $ \nas of {time}'
         self.__save(items)
 
 

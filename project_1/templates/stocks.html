@@ -15,7 +15,8 @@
             <th align="center">Amount of shares</th>
             <th align="center">Shares Cost</th>
             <th align="center">Potential P&L</th>
-            <th align="center"></th>
+            <th align="center">Action Form</th>
+            <th align="center">Delete</th>
         </tr>
         {% for x in stocks %}
             <tr style="height:50px; width:650px; margin:10px;">
@@ -25,6 +26,14 @@
                 <td align="center">{{ x.amount }}</td>
                 <th align="center">{{x.profit_and_loss}}</th>
                 <th align="center">{{x.shares_cost}}</th>
+                 <td align="center">
+                    <form>
+                        <input type="number" name="shares_text" id="txt"><br></form>
+                    <form action="{{ url_for('update_amount', ticker=x.ticker) }}" method="post">
+                        <input type="submit" name="submit_button" value="Buy" >
+                        <input type="submit" name="submit_button" value="Sell">
+                    </form>
+                </td>
                 <td align="center">
                     <form action="{{ url_for('delete', ticker=x.ticker) }}" method="post">
                         <input class="danger" type="submit" value="Delete">

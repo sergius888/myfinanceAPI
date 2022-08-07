@@ -111,19 +111,6 @@
     "transactions": []
   },
   {
-    "ticker": "NFLX",
-    "company": "Netflix, Inc.",
-    "amount": 0,
-    "field": "Communication Services",
-    "longSummary": "Netflix, Inc. provides entertainment services. It offers TV series, documentaries, feature films, and mobile games across various genres and languages. The company provides members the ability to receive streaming content through a host of internet-connected devices, including TVs, digital video players, television set-top boxes, and mobile devices. It also provides DVDs-by-mail membership services in the United States. The company has approximately 222 million paid members in 190 countries. Netflix, Inc. was incorporated in 1997 and is headquartered in Los Gatos, California.",
-    "exchange": "NMS",
-    "country": "United States",
-    "numberOfEmployees": 11300,
-    "sharesCost": 0,
-    "Potential P/L": 0,
-    "transactions": []
-  },
-  {
     "ticker": "PLTR",
     "company": "Palantir Technologies Inc.",
     "amount": 15.0,
