@@ -27,9 +27,14 @@
                 <th align="center">{{x.profit_and_loss}}</th>
                 <th align="center">{{x.shares_cost}}</th>
                  <td align="center">
-                    <form>
-                        <input type="number" name="shares_text" id="txt"><br></form>
+<!--                     <form method="POST">-->
+<!--            <input name="text">-->
+<!--            <input type="submit">-->
+<!--                            </form>-->
+<!--                    <form>-->
+<!--                        <input type="number" name="shares_text" id="txt"><br></form>-->
                     <form action="{{ url_for('update_amount', ticker=x.ticker) }}" method="post">
+                        <input type="number" name="shares_text" id="txt"><br>
                         <input type="submit" name="submit_button" value="Buy" >
                         <input type="submit" name="submit_button" value="Sell">
                     </form>

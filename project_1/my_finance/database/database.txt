@@ -2,13 +2,13 @@
   {
     "ticker": "PATH",
     "company": "UiPath Inc.",
-    "amount": 20.0,
+    "amount": 75.0,
     "field": "Technology",
     "longSummary": "UiPath Inc. provides an end-to-end automation platform that offers a range of robotic process automation (RPA) solutions primarily in the United States, Romania, and Japan. The company offers a suite of interrelated software to build, manage, run, engage, measure, and govern automation within the organization. Its platform combines artificial intelligence with desktop recording, back-end mining of both human activity and system logs, and intuitive visualization tools, which enables users to discover, analyze, and identify processes to automate in a centralized portal; offers low-code development environments that allows users in an organization to create attended and unattended automations without any prior knowledge of coding; deploys robots in highly immersive attended experiences or in standalone, unattended modes behind the scenes, and can leverage native connectors built for commonly used line-of-business applications; offers centralized tools designed to manage, test, and deploy automations and ML models across the enterprise; allows customers to manage long running processes that orchestrate work between robots and humans; and enable users to track, measure, and forecast the performance of automation in their enterprise and help businesses ensure compliance with business standards. In addition, the company provides maintenance and support for its software, as well as professional services, such as training and implementation services to facilitate the adoption of its platform. It serves banking, healthcare, financial services, and government entities. UiPath Inc. was founded in 2005 and is headquartered in New York, New York.",
     "exchange": "NYQ",
     "country": "United States",
     "numberOfEmployees": 4013,
-    "sharesCost": 412.8,
+    "sharesCost": 1613.1000000000001,
     "Potential P/L": "12.999999999999943$ \nas of 05/08/2022 14:54:13",
     "transactions": [
       {
@@ -16,6 +16,192 @@
         "num_of_shares": 20.0,
         "at_price": 20.64,
         "transaction_date": "03/08/2022 18:54:24"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.24,
+        "transaction_date": "08/08/2022 11:22:07"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.24,
+        "transaction_date": "08/08/2022 11:22:07"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.24,
+        "transaction_date": "08/08/2022 11:24:40"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -5.0,
+        "at_price": 21.24,
+        "transaction_date": "08/08/2022 11:25:24"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.24,
+        "transaction_date": "08/08/2022 11:41:55"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.24,
+        "transaction_date": "08/08/2022 11:50:48"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.91,
+        "transaction_date": "08/08/2022 18:47:54"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.91,
+        "transaction_date": "08/08/2022 18:48:49"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.87,
+        "transaction_date": "08/08/2022 18:55:32"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.68,
+        "transaction_date": "08/08/2022 19:00:09"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.66,
+        "transaction_date": "08/08/2022 19:09:20"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.76,
+        "transaction_date": "08/08/2022 19:42:12"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.8,
+        "transaction_date": "08/08/2022 19:43:16"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.74,
+        "transaction_date": "08/08/2022 20:22:52"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.84,
+        "transaction_date": "08/08/2022 20:32:06"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.81,
+        "transaction_date": "08/08/2022 20:34:57"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.85,
+        "transaction_date": "08/08/2022 20:39:12"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.85,
+        "transaction_date": "08/08/2022 20:39:43"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.79,
+        "transaction_date": "08/08/2022 20:40:42"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.77,
+        "transaction_date": "08/08/2022 20:41:15"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.89,
+        "transaction_date": "08/08/2022 21:06:28"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.91,
+        "transaction_date": "08/08/2022 21:09:16"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.91,
+        "transaction_date": "08/08/2022 21:10:40"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 10:38:34"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 10:44:15"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 10:46:40"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 11:12:19"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 11:26:57"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 11:29:52"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 11:31:38"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 21.94,
+        "transaction_date": "09/08/2022 12:11:34"
       }
     ]
   },
@@ -74,6 +260,18 @@
         "num_of_shares": 5.0,
         "at_price": 168.88,
         "transaction_date": "03/08/2022 18:54:24"
+      },
+      {
+        "position": "BUY",
+        "num_of_shares": 10.0,
+        "at_price": 170.25,
+        "transaction_date": "09/08/2022 10:46:40"
+      },
+      {
+        "position": "SELL",
+        "num_of_shares": -10.0,
+        "at_price": 170.25,
+        "transaction_date": "09/08/2022 11:40:44"
       }
     ]
   },

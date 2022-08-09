@@ -8,6 +8,8 @@ from my_finance.database.stock_file_persistence import StockFilePersistance
 from my_finance.database.stock_sql_persistence import StockSqlPersistance
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 
 conf = Configuration()
 print(conf.get_db_type())
@@ -36,24 +38,26 @@ def delete(ticker):
     return redirect(url_for("hello"))
 
 
-@app.route("/stocks/<ticker>/update", methods=["POST"])
+@app.route("/stocks/<ticker>/transactions", methods=["GET", "POST"])
 def update_amount(ticker):
-    # u = request.args.get('')
+    items = persistence.get_all()
+    transactions = [x for stocks in items if stocks["ticker"] == ticker for x in stocks["transactions"]]
+    transactions = list(reversed(transactions))
 
-    if request.form["submit_button"] == "Buy":
-        print("it checks")
-        position = "BUY"
-    else:
-        print("works with sell")
-        position = "SELL"
+    if request.method == "POST":
+        if request.form["submit_button"] == "Buy":
+            position = "BUY"
+        else:
+            print("works with sell")
+            position = "SELL"
 
-    number = request.form['txt']
-    print(number)
-    num_of_shares = float(number)
+        u = request.form.get('shares_text')
+        num_of_shares = float(u)
+        stock_repo.add_transactions(ticker, position, num_of_shares)
+        return render_template("transactions_history.html", transactions=transactions, ticker=ticker)
 
-
-    stock_repo.add_transactions(ticker, position, num_of_shares)
-    return redirect(url_for("hello"))
+    if request.method == "GET":
+        return render_template("transactions_history.html", transactions=transactions, ticker=ticker)
 
 
 @app.route("/stocks", methods=["GET", "POST"])
@@ -72,7 +76,8 @@ def create():
         return render_template("add_new_stock.html")
 
 
-
+# @app.route("/stocks/<ticker>/read", methods=["POST"])
+# def some_name(ticker):
 
 
 '''
